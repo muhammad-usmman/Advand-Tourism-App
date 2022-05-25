@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+import 'package:travelling_app/screens/loading_screen.dart';
 
 void main() => runApp(MyApp());
 
