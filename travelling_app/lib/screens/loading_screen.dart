@@ -23,12 +23,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        
+
         child:Container(
           constraints: BoxConstraints.expand(),
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image:AssetImage('assests/images/bgpic.jpeg'),
+                image:AssetImage('assests/images/bgpic.jpg'),
                 fit: BoxFit.cover),
           ),
 
