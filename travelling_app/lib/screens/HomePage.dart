@@ -21,7 +21,6 @@ class _HomeState extends State<Home> {
         decoration: const BoxDecoration(
           image: DecorationImage(
               image:AssetImage('images/home_background.PNG'),
-
               fit: BoxFit.cover),
         ),
 
@@ -44,17 +43,66 @@ class _HomeState extends State<Home> {
                       scrollDirection: Axis.horizontal,
                       children: [
 
-                        Container(
-                          padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/a.png"),//if validation ok show this1
+                        InkWell(
+
+                          child: Container(
+
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/fasil_mosque.PNG"),
+
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
                         ),
-                        Container(
-                          padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/b.png"),//if validation ok show this1
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/monument.PNG"),//if validation ok show this1
+                          ),
+
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
+
                         ),
-                        Container(
-                          padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/c.png"),//if validation ok show this1
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/mONAL.PNG"),//if validation ok show this1
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
+                        ),
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/centuros.PNG"),//if validation ok show this1
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
                         ),
                       ],
                     ),
@@ -100,11 +148,63 @@ class _HomeState extends State<Home> {
                         ),
                         Container(
                           padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/lahorefort.PNG"),//if validation ok show this1
+                          child:Image.asset("images/lahore_fort.PNG"),//if validation ok show this1
                         ),
-                        Container(
-                          padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/c.png"),//if validation ok show this1
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/badshi_mosque.PNG"),//if validation ok show this1
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
+                        ),
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/lahore_musem.PNG"),//if validation ok show this1
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
+                        ),
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/shahjhan.PNG"),//if validation ok show this1
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
+                        ),
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.all(10.0),
+                            child:Image.asset("images/walled_city.PNG"),//if validation ok show this1
+                          ),
+                          // onTap: (){
+                          //
+                          //   Navigator.push(context,
+                          //       MaterialPageRoute(builder: (context)=>About(
+                          //
+                          //       ))
+                          //   );
+                          // },
                         ),
                       ],
                     ),
