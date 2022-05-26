@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:travelling_app/constant.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -31,7 +31,9 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
 
           children: [
-            Text('Islamabad'),
+            Text('Islamabad',
+            style: kBodyTextStyle ,
+            ),
             Expanded(
               child:
               Column(
@@ -64,9 +66,7 @@ class _HomeState extends State<Home> {
                       children: [
                         Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
                         Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
+
                       ],
                     ),
                   ),
@@ -75,9 +75,13 @@ class _HomeState extends State<Home> {
 
               ),
             ),
-
-
-            Text('Lahore'),
+            SizedBox(
+              height: 20,
+              width: 10,
+            ),
+            
+            Text('Lahore',
+              style: kBodyTextStyle ,),
             Expanded(
               child:
               Column(
@@ -110,9 +114,7 @@ class _HomeState extends State<Home> {
                       children: [
                         Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
                         Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
+
                       ],
                     ),
                   ),
