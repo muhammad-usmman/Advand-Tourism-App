@@ -33,25 +33,32 @@ class _HomeState extends State<Home> {
           children: [
             Text('Islamabad'),
             Expanded(
-              child: Column(
+              child:
+              Column(
                 children: [
-                  Row(
-                    children: [
+                  Container(
+                    height : 200,
+                    child:ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
 
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        child:Image.asset("images/a.png"),//if validation ok show this1
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        child:Image.asset("images/b.png"),//if validation ok show this1
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        child:Image.asset("images/c.png"),//if validation ok show this1
-                      ),
-                    ],
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child:Image.asset("images/a.png"),//if validation ok show this1
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child:Image.asset("images/b.png"),//if validation ok show this1
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child:Image.asset("images/c.png"),//if validation ok show this1
+                        ),
+                      ],
+                    ),
                   ),
+
+
                   Expanded(
                     child: Column(
                       children: [
@@ -70,27 +77,34 @@ class _HomeState extends State<Home> {
             ),
 
 
-            Text('Islamabad'),
+            Text('Lahore'),
             Expanded(
-              child: Column(
+              child:
+              Column(
                 children: [
-                  Row(
-                    children: [
+                  Container(
+                    height : 200,
+                    child:ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
 
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        child:Image.asset("images/a.png"),//if validation ok show this1
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        child:Image.asset("images/b.png"),//if validation ok show this1
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(10.0),
-                        child:Image.asset("images/c.png"),//if validation ok show this1
-                      ),
-                    ],
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child:Image.asset("images/a.png"),//if validation ok show this1
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child:Image.asset("images/b.png"),//if validation ok show this1
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(10.0),
+                          child:Image.asset("images/c.png"),//if validation ok show this1
+                        ),
+                      ],
+                    ),
                   ),
+
+
                   Expanded(
                     child: Column(
                       children: [
@@ -113,5 +127,10 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+
   }
+  // widget buildcard() => Container(
+  //   width: 200,
+  //   height: 200,
+  // );
 }

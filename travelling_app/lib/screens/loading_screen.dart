@@ -28,7 +28,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           constraints: BoxConstraints.expand(),
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image:AssetImage('assests/images/bgpic.jpg'),
+                image:AssetImage('images/splash.PNG'),
                 fit: BoxFit.cover),
           ),
 
