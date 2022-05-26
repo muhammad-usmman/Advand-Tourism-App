@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
               width: 10.0,
               height: 10.0,
             ),
-            Text('Islamabad',
+            Text('   Islamabad',
             style: kHTextStyle ,
             ),
             Expanded(
@@ -168,7 +168,7 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text('Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
+                        Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
                         style: kBodyTextStyle,
                         ),
                       ],
@@ -215,7 +215,7 @@ class _HomeState extends State<Home> {
             ),
 
 
-            Text('Lahore',
+            Text('   Lahore',
               style: kHTextStyle ,),
             Expanded(
               child:
@@ -384,7 +384,7 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text("Lahore  is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world",
+                        Text("     Lahore  is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world",
                         style: kBodyTextStyle,
                         ),
 
@@ -392,14 +392,42 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: ()=>Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder:
+                              (context) =>
+                              Book(),
+                          ),
+                        ),
+                        child: Container(
+                          child: Center(
+                            child: Text(
+                              'Book Now',
+                              style: kLargeButtonStyle,
+                            ),
+                          ),
+                          color: Colors.red,
+
+
+                          margin: EdgeInsets.only(top: 10.0),
+                          width:  220.0,
+                          height: 60.0,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      )
+                    ],
+
+                  )
                 ],
-
-
               ),
             ),
-
           ],
-
         ),
       ),
       drawer: Drawer( child: ListView(
