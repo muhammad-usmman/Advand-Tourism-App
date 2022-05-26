@@ -51,6 +51,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/start.PNG
+    - images/home_background.PNG
 
 
 

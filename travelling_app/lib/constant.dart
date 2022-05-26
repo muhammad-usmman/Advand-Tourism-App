@@ -24,11 +24,13 @@ const kResultText=TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
 );
-const kBMITextStyle=TextStyle(
-  fontSize: 25.0,
+const kHTextStyle=TextStyle(
+  fontSize: 30.0,
   fontWeight: FontWeight.bold,
+    color: Colors.black
 );
 const kBodyTextStyle=TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
+  color: Colors.black54
 );

@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image:AssetImage('assests/images/bg.jpg'),
+              image:AssetImage('images/home_background.PNG'),
 
               fit: BoxFit.cover),
         ),
@@ -32,14 +32,14 @@ class _HomeState extends State<Home> {
 
           children: [
             Text('Islamabad',
-            style: kBodyTextStyle ,
+            style: kHTextStyle ,
             ),
             Expanded(
               child:
               Column(
                 children: [
                   Container(
-                    height : 200,
+                    height : 100,
                     child:ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -64,8 +64,10 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
+                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild',
+                        style: kBodyTextStyle,
+                        ),
+
 
                       ],
                     ),
@@ -79,15 +81,15 @@ class _HomeState extends State<Home> {
               height: 20,
               width: 10,
             ),
-            
+
             Text('Lahore',
-              style: kBodyTextStyle ,),
+              style: kHTextStyle ,),
             Expanded(
               child:
               Column(
                 children: [
                   Container(
-                    height : 200,
+                    height : 100,
                     child:ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
@@ -112,8 +114,10 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild'),
+                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild',
+                        style: kBodyTextStyle,
+                        ),
+
 
                       ],
                     ),
