@@ -96,11 +96,11 @@ class _HomeState extends State<Home> {
 
                         Container(
                           padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/a.png"),//if validation ok show this1
+                          child:Image.asset("images/minare_pakistan.PNG"),//if validation ok show this1
                         ),
                         Container(
                           padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/b.png"),//if validation ok show this1
+                          child:Image.asset("images/lahorefort.PNG"),//if validation ok show this1
                         ),
                         Container(
                           padding: EdgeInsets.all(10.0),
