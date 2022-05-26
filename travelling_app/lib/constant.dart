@@ -33,4 +33,5 @@ const kBodyTextStyle=TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
   color: Colors.black54
+
 );

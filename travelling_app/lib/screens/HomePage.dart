@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
+import 'package:travelling_app/Data/badsahi_mosque.dart';
+import 'package:travelling_app/Data/centours.dart';
+import 'package:travelling_app/Data/fasil_Mosque.dart';
+import 'package:travelling_app/Data/lahore_fort.dart';
+import 'package:travelling_app/Data/lahore_museum.dart';
+import 'package:travelling_app/Data/minare_Pakistan.dart';
+import 'package:travelling_app/Data/monal.dart';
+import 'package:travelling_app/Data/Monument.dart';
+import 'package:travelling_app/Data/ShahJhan.dart';
+import 'package:travelling_app/Data/walled_Citty.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -20,16 +30,22 @@ class _HomeState extends State<Home> {
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image:AssetImage('images/home_background.PNG'),
+              image:AssetImage('images/bg_home.jpg',),
+              colorFilter:ColorFilter.linearToSrgbGamma() ,
               fit: BoxFit.cover),
+
         ),
 
 
         child:Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
           children: [
+            SizedBox(
+              width: 10.0,
+              height: 10.0,
+            ),
             Text('Islamabad',
             style: kHTextStyle ,
             ),
@@ -44,65 +60,103 @@ class _HomeState extends State<Home> {
                       children: [
 
                         InkWell(
-
                           child: Container(
-
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/fasil_mosque.PNG"),
-
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/fasil_mosque.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Faasil_Mosque(
+
+                                ))
+                            );
+                          },
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/monument.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/monument.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
+                          onTap: (){
 
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Monument(
 
+                                ))
+                            );
+                          },
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/mONAL.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/mONAL.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Monal(
+
+                                ))
+                            );
+                          },
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/centuros.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/centuros.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Centours(
+
+                                ))
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          width: 10.0,
                         ),
                       ],
                     ),
@@ -112,7 +166,7 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild',
+                        Text('Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
                         style: kBodyTextStyle,
                         ),
 
@@ -142,69 +196,154 @@ class _HomeState extends State<Home> {
                       scrollDirection: Axis.horizontal,
                       children: [
 
-                        Container(
-                          padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/minare_pakistan.PNG"),//if validation ok show this1
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(10.0),
-                          child:Image.asset("images/lahore_fort.PNG"),//if validation ok show this1
-                        ),
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/badshi_mosque.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/minare_pakistan.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Minare_Pakistan(
+
+                                ))
+                            );
+                          },
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/lahore_musem.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/lahore_fort.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Lahore_fort(
+
+                                ))
+                            );
+                          },
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/shahjhan.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/badshi_mosque.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Badshahi(
+
+                                ))
+                            );
+                          },
                         ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
                         InkWell(
                           child: Container(
-                            padding: EdgeInsets.all(10.0),
-                            child:Image.asset("images/walled_city.PNG"),//if validation ok show this1
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/lahore_musem.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
                           ),
-                          // onTap: (){
-                          //
-                          //   Navigator.push(context,
-                          //       MaterialPageRoute(builder: (context)=>About(
-                          //
-                          //       ))
-                          //   );
-                          // },
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>lahore_Museum(
+
+                                ))
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
+                        InkWell(
+                          child: Container(
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/shahjhan.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
+                          ),
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Shahjhan(
+
+                                ))
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+
+                        InkWell(
+                          child: Container(
+                            width: 150.0,
+                            height: 150.0,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage("images/walled_city.PNG")),
+                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                              color: Colors.redAccent,
+                            ),
+                          ),
+                          onTap: (){
+
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>Walled_City(
+
+                                ))
+                            );
+                          },
+                        ),
+                        SizedBox(
+                          width: 10.0,
                         ),
                       ],
                     ),
@@ -214,7 +353,7 @@ class _HomeState extends State<Home> {
                   Expanded(
                     child: Column(
                       children: [
-                        Text('fbhdbvibirbibidbvobv fgfougogog hvcusbilsbuofiS jusegfisbvilbvusbilsbvuoS jlbuosbflisbosgc ucuscbilsbisblibvuodv ulsdvulsvlbvild',
+                        Text("Lahore  is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world",
                         style: kBodyTextStyle,
                         ),
 
