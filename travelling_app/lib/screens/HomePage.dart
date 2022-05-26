@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:travelling_app/Functionality_pages/Booking.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
@@ -169,11 +171,39 @@ class _HomeState extends State<Home> {
                         Text('Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
                         style: kBodyTextStyle,
                         ),
-
-
                       ],
                     ),
                   ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: ()=>Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder:
+                              (context) =>
+                              Book(),
+                          ),
+                        ),
+                        child: Container(
+                          child: Center(
+                            child: Text(
+                              'Book Now',
+                              style: kLargeButtonStyle,
+                            ),
+                          ),
+                          color: Colors.red,
+
+
+                          margin: EdgeInsets.only(top: 10.0),
+                          width:  220.0,
+                          height: 60.0,
+                        ),
+                      )
+                    ],
+
+                  )
+
                 ],
 
 
@@ -183,6 +213,7 @@ class _HomeState extends State<Home> {
               height: 20,
               width: 10,
             ),
+
 
             Text('Lahore',
               style: kHTextStyle ,),
@@ -371,11 +402,69 @@ class _HomeState extends State<Home> {
 
         ),
       ),
+      drawer: Drawer( child: ListView(
+
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.teal,
+            ),
+            child: Text('Travel and Tourism'),
+
+          ),
+          ListTile(
+            title: Text('Home'),
+            leading: Icon(Icons.home),
+            onTap: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>Home(
+
+                  )));
+            },
+          ),
+
+
+
+
+          ListTile(
+            title: Text('Queries'),
+            leading: Icon(Icons.question_mark),
+            // onTap: (){
+            //
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context)=>About(
+            //
+            //       )));
+            // },
+          ),
+          ListTile(
+            title: Text('Contact Us'),
+            leading: Icon(Icons.call),
+            // onTap: (){
+            //
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context)=>Contact(
+            //
+            //       )));
+            // },
+          ),
+          ListTile(
+            title: Text('About us'),
+            leading: Icon(Icons.person),
+            // onTap: (){
+            //
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context)=>About(
+            //
+            //       )));
+            // },
+          ),
+        ],
+      ),),
     );
 
   }
-  // widget buildcard() => Container(
-  //   width: 200,
-  //   height: 200,
-  // );
+
 }
