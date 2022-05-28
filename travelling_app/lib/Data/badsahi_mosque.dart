@@ -13,9 +13,22 @@ class _BadshahiState extends State<Badshahi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        title: Text('Badshai Mosque'),
-    ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        toolbarHeight: 60.0,
+        title: TextField(
+          cursorColor: Colors.white,
+          decoration: InputDecoration(
+              hintText: " Search...",
+              border: InputBorder.none,
+              suffixIcon: IconButton(
+                icon: Icon(Icons.search),
+                color: Color.fromRGBO(93, 25, 72, 1),
+                onPressed: () {},
+              )),
+          style: TextStyle(color: Colors.white, fontSize: 15.0),
+        ),
+      ),
     body:Container(
     constraints: BoxConstraints.expand(),
     decoration: const BoxDecoration(
@@ -62,12 +75,16 @@ class _BadshahiState extends State<Badshahi> {
                 onPressed: () {
                   print('Liked');
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0),
+                // style: ElevatedButton.styleFrom(
+                //   shape: new RoundedRectangleBorder(
+                //     borderRadius: new BorderRadius.circular(20.0),
+                //   ),
+                  style: ButtonStyle(
+                    backgroundColor:   MaterialStateProperty.all(Colors.transparent),
+                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
                   ),
                 ),
-              )
+
                   ],
                 ),
               )

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'dart:async';
 import 'package:travelling_app/screens/HomePage.dart';
+import 'package:travelling_app/screens/leading_screen.dart';
 
 
 class LoadingScreen extends StatefulWidget {
@@ -15,7 +17,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                Home()
+                Opening()
             )
         )
     );

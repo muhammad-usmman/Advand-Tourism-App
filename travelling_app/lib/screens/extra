@@ -1,0 +1,76 @@
+ ElevatedButton(
+                                   onPressed: ()=>Navigator.pushReplacement(context,
+                                     MaterialPageRoute(builder:
+                                         (context) =>
+                                         Opening(),
+                                     ),
+                                   ),
+
+                                   child:
+                                   Text('All')
+                               ),
+
+
+
+                               Column(
+                                                            children: [
+                                                              ElevatedButton(
+                                                                  onPressed: ()=>Navigator.pushReplacement(context,
+                                                                    MaterialPageRoute(builder:
+                                                                        (context) =>
+                                                                        Opening(),
+                                                                    ),
+                                                                  ),
+
+                                                                  child:
+                                                                  Text('All')
+                                                              ),
+
+                                                            ],
+                                                          ),
+
+
+
+                                                          Column(
+                                                                             children: [
+                                                                               Padding(
+                                                                                 padding: EdgeInsets.all(10),
+                                                                                 child: Row(
+                                                                                   children: [
+                                                                                     ElevatedButton(
+                                                                                         onPressed: ()=>Navigator.pushReplacement(context,
+                                                                                           MaterialPageRoute(builder:
+                                                                                               (context) =>
+                                                                                               Opening(),
+                                                                                           ),
+                                                                                         ),
+                                                                                           style: ElevatedButton.styleFrom(
+                                                                                             // backgroundColor:   MaterialStateProperty.all(Colors.white),
+                                                                                             primary: Colors.transparent,
+                                                                                            shadowColor: Colors.transparent,
+                                                                                           onSurface: Colors.transparent
+                                                                                           // padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                                                                                           ),
+
+                                                                                         child:
+                                                                                         Text('All',
+                                                                                         style: kHTextStyle,
+                                                                                         ),
+
+                                                                                     ),
+                                                                                     ElevatedButton(
+                                                                                         onPressed: ()=>Navigator.pushReplacement(context,
+                                                                                           MaterialPageRoute(builder:
+                                                                                               (context) =>
+                                                                                               Opening(),
+                                                                                           ),
+                                                                                         ),
+
+                                                                                         child:
+                                                                                         Text('All')
+                                                                                     ),
+                                                                                   ],
+                                                                                 ),
+                                                                               ),
+                                                                             ],
+                                                                           ),
