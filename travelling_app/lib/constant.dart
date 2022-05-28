@@ -39,3 +39,9 @@ const kBodyTextStyle=TextStyle(
   color: Colors.black
 
 );
+const kHLStyle=TextStyle(
+    fontSize: 15.0,
+    fontWeight: FontWeight.normal,
+    // fontStyle: FontStyle.italic,
+    color: Colors.black
+);

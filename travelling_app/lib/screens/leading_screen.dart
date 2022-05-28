@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
-import 'dart:math';
+import 'package:travelling_app/Data/fasil_Mosque.dart';
+import 'package:travelling_app/Data/centours.dart';
+import 'package:travelling_app/Data/monal.dart';
+import 'package:travelling_app/Data/Monument.dart';
 
+import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 
 class Opening extends StatefulWidget {
@@ -23,12 +27,13 @@ class _OpeningState extends State<Opening> {
   bool isReplay = false;
 
   Future<List<Post>> _getALlPosts(String text) async {
-    List<Post> posts = [];
+    List<Post> posts = [
+    ];
 
     var random = new Random();
     for (int i = 0; i < 10; i++) {
       posts
-          .add(Post("$text $i", "body random number : ${random.nextInt(100)}"));
+          .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
     }
     return posts;
   }
@@ -81,25 +86,184 @@ class _OpeningState extends State<Opening> {
                                  primary: Colors.transparent,
                                  shadowColor: Colors.transparent,
                                  onSurface: Colors.transparent
-                              
+
                              ),
 
                              child:
                              Text('All',
-                               style: kHTextStyle,
+                               style: kHLStyle,
                              ),
 
                            ),
                            ElevatedButton(
-                               onPressed: ()=>Navigator.pushReplacement(context,
-                                 MaterialPageRoute(builder:
-                                     (context) =>
-                                     Opening(),
-                                 ),
+                             onPressed: ()=>Navigator.pushReplacement(context,
+                               MaterialPageRoute(builder:
+                                   (context) =>
+                                   Opening(),
                                ),
+                             ),
+                             style: ElevatedButton.styleFrom(
+                                 primary: Colors.transparent,
+                                 shadowColor: Colors.transparent,
+                                 onSurface: Colors.transparent
 
-                               child:
-                               Text('All')
+                             ),
+
+                             child:
+                             Text('New',
+                               style: kHLStyle,
+                             ),
+
+                           ),
+                           ElevatedButton(
+                             onPressed: ()=>Navigator.pushReplacement(context,
+                               MaterialPageRoute(builder:
+                                   (context) =>
+                                   Opening(),
+                               ),
+                             ),
+                             style: ElevatedButton.styleFrom(
+                                 primary: Colors.transparent,
+                                 shadowColor: Colors.transparent,
+                                 onSurface: Colors.transparent
+
+                             ),
+
+                             child:
+                             Text('Most Viewed',
+                               style: kHLStyle,
+                             ),
+
+                           ),
+                           ElevatedButton(
+                             onPressed: ()=>Navigator.pushReplacement(context,
+                               MaterialPageRoute(builder:
+                                   (context) =>
+                                   Opening(),
+                               ),
+                             ),
+                             style: ElevatedButton.styleFrom(
+                                 primary: Colors.transparent,
+                                 shadowColor: Colors.transparent,
+                                 onSurface: Colors.transparent
+
+                             ),
+
+                             child:
+                             Text('Recomended',
+                               style: kHLStyle,
+                             ),
+
+                           ),
+
+                         ],
+                       ),
+                     ),
+                     Container(
+                       padding: EdgeInsets.all(10),
+                       height : 200,
+
+                       child:ListView(
+                         scrollDirection: Axis.horizontal,
+                         children: [
+
+                           InkWell(
+                             child: Container(
+                               width: 200.0,
+
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/fasil_mosque.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Faasil_Mosque(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+
+                           InkWell(
+                             child: Container(
+                               width: 200.0,
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/monument.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Monument(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+
+                           InkWell(
+                             child: Container(
+                               width: 200.0,
+
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/mONAL.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Monal(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+
+                           InkWell(
+                             child: Container(
+                               width: 200.0,
+
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/centuros.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Centours(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
                            ),
                          ],
                        ),
@@ -140,7 +304,67 @@ class _OpeningState extends State<Opening> {
          ],
        ),
       ),
+      endDrawer: Drawer( child: ListView(
 
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.teal,
+            ),
+            child: Text('Travel and Tourism'),
+
+          ),
+          ListTile(
+            title: Text('Home'),
+            leading: Icon(Icons.home),
+            onTap: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>Opening(
+
+                  )));
+            },
+          ),
+
+
+
+
+          ListTile(
+            title: Text('Queries'),
+            leading: Icon(Icons.question_mark),
+            // onTap: (){
+            //
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context)=>About(
+            //
+            //       )));
+            // },
+          ),
+          ListTile(
+            title: Text('Contact Us'),
+            leading: Icon(Icons.call),
+            // onTap: (){
+            //
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context)=>Contact(
+            //
+            //       )));
+            // },
+          ),
+          ListTile(
+            title: Text('About us'),
+            leading: Icon(Icons.person),
+            // onTap: (){
+            //
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context)=>About(
+            //
+            //       )));
+            // },
+          ),
+        ],
+      ),),
     );
 
   }

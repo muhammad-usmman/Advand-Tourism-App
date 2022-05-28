@@ -423,7 +423,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      drawer: Drawer( child: ListView(
+      endDrawer: Drawer( child: ListView(
 
         padding: EdgeInsets.zero,
         children: [
