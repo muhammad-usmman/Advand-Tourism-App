@@ -28,13 +28,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text('Tourism'),
       ),
-      body:Container(
+      body:
+      Container(
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
-          image: DecorationImage(
-              image:AssetImage('images/bg_home.jpg',),
-              colorFilter:ColorFilter.linearToSrgbGamma() ,
-              fit: BoxFit.cover),
+          // image: DecorationImage(
+          //     // image:AssetImage('images/bg_home.jpg',),
+          //     colorFilter:ColorFilter.linearToSrgbGamma() ,
+          //     fit: BoxFit.cover),
 
         ),
 
@@ -44,10 +45,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
           children: [
-            SizedBox(
-              width: 10.0,
-              height: 10.0,
-            ),
+
             Text('   Islamabad',
             style: kHTextStyle ,
             ),
@@ -56,15 +54,16 @@ class _HomeState extends State<Home> {
               Column(
                 children: [
                   Container(
-                    height : 100,
+                    padding: EdgeInsets.all(10),
+                    height : 110,
                     child:ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
+
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -88,8 +87,7 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -113,8 +111,8 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
+
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -138,8 +136,8 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
+
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -165,43 +163,44 @@ class _HomeState extends State<Home> {
                   ),
 
 
-                  Expanded(
-                    child: Column(
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Expanded(
+                      child: Column(
+                        children: [
+                          Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
+                          style: kBodyTextStyle,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
-                        style: kBodyTextStyle,
+                        ElevatedButton(
+                          onPressed: ()=>Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder:
+                                (context) =>
+                                Book(),
+                            ),
+                          ),
+                          child: Text(
+                            'Book Now',
+                            style: kLargeButtonStyle,
+                          ),
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Colors.red),
+                            padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                            // textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30))
+                          ),
+
                         ),
                       ],
                     ),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: ()=>Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder:
-                              (context) =>
-                              Book(),
-                          ),
-                        ),
-                        child: Container(
-                          child: Center(
-                            child: Text(
-                              'Book Now',
-                              style: kLargeButtonStyle,
-                            ),
-                          ),
-                          color: Colors.red,
-
-
-                          margin: EdgeInsets.only(top: 10.0),
-                          width:  220.0,
-                          height: 60.0,
-                        ),
-                      )
-                    ],
-
                   )
 
                 ],
@@ -209,28 +208,29 @@ class _HomeState extends State<Home> {
 
               ),
             ),
-            SizedBox(
-              height: 20,
-              width: 10,
+
+
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              child: Text('   Lahore',
+                style: kHTextStyle ,
+
+              ),
             ),
-
-
-            Text('   Lahore',
-              style: kHTextStyle ,),
             Expanded(
               child:
               Column(
                 children: [
                   Container(
-                    height : 100,
+                    height : 110,
                     child:ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -254,8 +254,7 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -279,8 +278,7 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -304,8 +302,7 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -329,8 +326,7 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -354,8 +350,7 @@ class _HomeState extends State<Home> {
 
                         InkWell(
                           child: Container(
-                            width: 150.0,
-                            height: 150.0,
+                            width: 200.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -381,48 +376,46 @@ class _HomeState extends State<Home> {
                   ),
 
 
-                  Expanded(
-                    child: Column(
-                      children: [
-                        Text("     Lahore  is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world",
-                        style: kBodyTextStyle,
-                        ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Expanded(
+                      child: Column(
+                        children: [
+                          Text("     Lahore  is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world",
+                          style: kBodyTextStyle,
+                          ),
 
 
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: ()=>Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder:
-                              (context) =>
-                              Book(),
-                          ),
-                        ),
-                        child: Container(
-                          child: Center(
-                            child: Text(
-                              'Book Now',
-                              style: kLargeButtonStyle,
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          onPressed: ()=>Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder:
+                                (context) =>
+                                Book(),
                             ),
                           ),
-                          color: Colors.red,
+                          child: Text(
+                            'Book Now',
+                            style: kLargeButtonStyle,
+                          ),
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(Colors.red),
+                              padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+                              // textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30))
+                          ),
 
-
-                          margin: EdgeInsets.only(top: 10.0),
-                          width:  220.0,
-                          height: 60.0,
                         ),
-                      ),
-                      SizedBox(
-                        height: 5.0,
-                      )
-                    ],
-
+                      ],
+                    ),
                   )
                 ],
               ),
