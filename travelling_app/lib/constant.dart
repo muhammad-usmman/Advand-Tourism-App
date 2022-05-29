@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 
-const kLabelStyle=TextStyle(
-    fontSize: 22.0,
-    color: Color(0xFF8D8E98)
-);
 
 
 
-const kNumberstyle=TextStyle(
-  fontSize: 50.0,
-  fontWeight: FontWeight.w900,
-);
+
+
 const kLargeButtonStyle=TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
@@ -40,8 +34,14 @@ const kBodyTextStyle=TextStyle(
 
 );
 const kHLStyle=TextStyle(
-    fontSize: 15.0,
+    fontSize: 20.0,
     fontWeight: FontWeight.normal,
-    // fontStyle: FontStyle.italic,
+    fontFamily:'DancingScript',
+    color: Colors.black
+);
+const kLStyle=TextStyle(
+    fontSize: 30.0,
+    fontWeight: FontWeight.bold,
+    fontFamily:'DancingScript',
     color: Colors.black
 );

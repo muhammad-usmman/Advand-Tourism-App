@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/fasil_Mosque.dart';
@@ -30,7 +32,7 @@ class _OpeningState extends State<Opening> {
     List<Post> posts = [
     ];
 
-    var random = new Random();
+    var random = Random();
     for (int i = 0; i < 10; i++) {
       posts
           .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
@@ -45,14 +47,14 @@ class _OpeningState extends State<Opening> {
       ),
     backgroundColor: Colors.white,
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
        child: Column(
          mainAxisAlignment: MainAxisAlignment.start,
          crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-           Expanded(
+           const Expanded(
              child: Text("Let's enjoy \n your vacation!! ",
-             style: kHTextStyle,),
+             style: kLStyle,),
            ),
            Expanded(
              flex: 7,
@@ -161,7 +163,7 @@ class _OpeningState extends State<Opening> {
                      ),
                      Container(
                        padding: EdgeInsets.all(10),
-                       height : 200,
+                       height : 250,
 
                        child:ListView(
                          scrollDirection: Axis.horizontal,
@@ -175,7 +177,7 @@ class _OpeningState extends State<Opening> {
                                  image: DecorationImage(
                                      fit: BoxFit.cover,
                                      image: NetworkImage("images/fasil_mosque.PNG")),
-                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                  color: Colors.redAccent,
                                ),
                              ),
@@ -292,15 +294,138 @@ class _OpeningState extends State<Opening> {
                  },
              ),
                ),
-
-
-
-
+                 
 
                ],
 
+
              ),
+
            ),
+           Text('Upcoming Features',
+           style: kLStyle,),
+           Column(
+             children: [
+               Padding(
+                 padding: EdgeInsets.all(10.0),
+                 child: Row(
+
+                   children: [
+                     Container(
+                       padding: EdgeInsets.all(10),
+                       height : 100,
+
+                       child:Row(
+                         // scrollDirection: Axis.horizontal,
+                         children: [
+
+                           InkWell(
+                             child: Container(
+                               width: 100.0,
+
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/fasil_mosque.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Faasil_Mosque(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+
+                           InkWell(
+                             child: Container(
+                               width: 100.0,
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/monument.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Monument(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+
+                           InkWell(
+                             child: Container(
+                               width: 100.0,
+
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/mONAL.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Monal(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+
+                           InkWell(
+                             child: Container(
+                               width: 100.0,
+
+                               decoration: BoxDecoration(
+                                 image: DecorationImage(
+                                     fit: BoxFit.cover,
+                                     image: NetworkImage("images/centuros.PNG")),
+                                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                 color: Colors.redAccent,
+                               ),
+                             ),
+                             onTap: (){
+
+                               Navigator.push(context,
+                                   MaterialPageRoute(builder: (context)=>Centours(
+
+                                   ))
+                               );
+                             },
+                           ),
+                           SizedBox(
+                             width: 10.0,
+                           ),
+                         ],
+                       ),
+                     ),
+                   ],
+                 ),
+               ),
+
+             ],
+           )
          ],
        ),
       ),

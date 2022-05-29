@@ -66,6 +66,10 @@ flutter:
     - images/Badshahi.jpg
     - images/splash2.jpg
     - images/splash3.jpg
+  fonts:
+    - family: DancingScript
+      fonts:
+        - asset: fonts/DancingScript-Regular.ttf
 
 
 
