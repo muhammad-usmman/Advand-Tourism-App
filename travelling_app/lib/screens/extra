@@ -74,3 +74,22 @@
                                                                                ),
                                                                              ],
                                                                            ),
+
+
+
+                                                                           centerTitle: true,
+                                                                             title: Text('AppBar'),
+                                                                             leading: IconButton(
+                                                                               onPressed: () {},
+                                                                               icon: Icon(Icons.home),
+                                                                             ),
+                                                                             actions: [
+                                                                               IconButton(
+                                                                                 onPressed: () {},
+                                                                                 icon: Icon(Icons.call),
+                                                                               ),
+                                                                               IconButton(
+                                                                                 onPressed: () {},
+                                                                                 icon: Icon(Icons.more_vert),
+                                                                               ),
+                                                                             ],

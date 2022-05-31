@@ -1,4 +1,4 @@
-import 'package:travelling_app/screens/leading_screen.dart';
+import 'package:travelling_app/screens/Home_Page.dart';
 
 
 List<Post> posts = [

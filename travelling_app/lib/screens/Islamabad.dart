@@ -13,14 +13,14 @@ import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/Data/ShahJhan.dart';
 import 'package:travelling_app/Data/walled_Citty.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class Islamabad extends StatefulWidget {
+  const Islamabad({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Islamabad> createState() => _IslamabadState();
 }
 
-class _HomeState extends State<Home> {
+class _IslamabadState extends State<Islamabad> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -440,7 +440,7 @@ class _HomeState extends State<Home> {
             onTap: (){
 
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>Home(
+                  MaterialPageRoute(builder: (context)=>Islamabad(
 
                   )));
             },

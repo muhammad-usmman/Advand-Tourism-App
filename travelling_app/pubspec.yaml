@@ -66,6 +66,11 @@ flutter:
     - images/Badshahi.jpg
     - images/splash2.jpg
     - images/splash3.jpg
+    - images/icons/camping_icon.jpg
+    - images/icons/cruise.jpg
+    - images/icons/road_trip.jpg
+    - images/icons/hotels.jpg
+    - images/icons/travel&tourism.jpg
   fonts:
     - family: DancingScript
       fonts:

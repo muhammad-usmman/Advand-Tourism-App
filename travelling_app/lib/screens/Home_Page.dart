@@ -1,5 +1,4 @@
 import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/fasil_Mosque.dart';
@@ -10,11 +9,11 @@ import 'package:travelling_app/Data/Monument.dart';
 import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 
-class Opening extends StatefulWidget {
-  const Opening({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
-  State<Opening> createState() => _OpeningState();
+  State<Home> createState() => _HomeState();
 }
 class Post {
   final String title;
@@ -24,7 +23,7 @@ class Post {
 }
 
 
-class _OpeningState extends State<Opening> {
+class _HomeState extends State<Home> {
   final SearchBarController<Post> _searchBarController = SearchBarController();
   bool isReplay = false;
 
@@ -42,8 +41,28 @@ class _OpeningState extends State<Opening> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(50.0),
+        child: AppBar(
+          iconTheme:const IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(
+                'images/icons/travel&tourism.jpg',
+                fit: BoxFit.contain,
+                height: 50,
+                width: 50,
+              ),
+              // Container(
+              //     padding: const EdgeInsets.all(8.0), child: Text('YourAppTitle'))
+            ],
+
+          ),
+          
+
+        ),
       ),
     backgroundColor: Colors.white,
       body: Container(
@@ -65,9 +84,9 @@ class _OpeningState extends State<Opening> {
                Expanded(
                  child: SearchBar<Post>(
                  minimumChars: 1,
-                 searchBarPadding: EdgeInsets.symmetric(horizontal: 10),
-                 headerPadding: EdgeInsets.symmetric(horizontal: 10),
-                 listPadding: EdgeInsets.symmetric(horizontal: 10),
+                 searchBarPadding: const EdgeInsets.symmetric(horizontal: 10),
+                 headerPadding: const EdgeInsets.symmetric(horizontal: 10),
+                 listPadding: const EdgeInsets.symmetric(horizontal: 10),
                  onSearch: _getALlPosts,
                  searchBarController: _searchBarController,
                  placeHolder:
@@ -81,7 +100,7 @@ class _OpeningState extends State<Opening> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Opening(),
+                                   Home(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -101,7 +120,7 @@ class _OpeningState extends State<Opening> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Opening(),
+                                   Home(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -121,7 +140,7 @@ class _OpeningState extends State<Opening> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Opening(),
+                                   Home(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -141,7 +160,7 @@ class _OpeningState extends State<Opening> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Opening(),
+                                   Home(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -320,37 +339,39 @@ class _OpeningState extends State<Opening> {
                          children: [
 
                            InkWell(
-                             child: Container(
+                             child:  Container(
                                width: 100.0,
-
-                               decoration: BoxDecoration(
+                               decoration:const BoxDecoration(
                                  image: DecorationImage(
                                      fit: BoxFit.cover,
-                                     image: NetworkImage("images/fasil_mosque.PNG")),
+                                     image: NetworkImage("images/icons/hotels.jpg")),
+
                                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                  color: Colors.redAccent,
                                ),
+                               // child:
+                               // const Text('Hotels',style: kLStyle,),
                              ),
                              onTap: (){
 
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>Faasil_Mosque(
+                                   MaterialPageRoute(builder: (context)=>const Faasil_Mosque(
 
                                    ))
                                );
                              },
                            ),
-                           SizedBox(
+                           const SizedBox(
                              width: 10.0,
                            ),
 
                            InkWell(
                              child: Container(
                                width: 100.0,
-                               decoration: BoxDecoration(
-                                 image: DecorationImage(
+                               decoration: const BoxDecoration(
+                                 image:  DecorationImage(
                                      fit: BoxFit.cover,
-                                     image: NetworkImage("images/monument.PNG")),
+                                     image: NetworkImage("images/icons/camping_icon.jpg")),
                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                  color: Colors.redAccent,
                                ),
@@ -358,35 +379,38 @@ class _OpeningState extends State<Opening> {
                              onTap: (){
 
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>Monument(
+                                   MaterialPageRoute(builder: (context)=>const Monument(
 
                                    ))
                                );
                              },
                            ),
-                           SizedBox(
+                           const SizedBox(
                              width: 10.0,
                            ),
 
                            InkWell(
-                             child: Container(
+                             child:
+                             Container(
                                width: 100.0,
 
-                               decoration: BoxDecoration(
+                               decoration: const BoxDecoration(
                                  image: DecorationImage(
                                      fit: BoxFit.cover,
-                                     image: NetworkImage("images/mONAL.PNG")),
+                                     image: NetworkImage("images/icons/cruise.jpg")),
                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                  color: Colors.redAccent,
                                ),
+                               // child:
+                               // // Text('Cruise')
                              ),
                              onTap: (){
 
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>Monal(
-
-                                   ))
+                                   MaterialPageRoute(builder: (context)=>Monal()
+                                   )
                                );
+
                              },
                            ),
                            SizedBox(
@@ -398,9 +422,9 @@ class _OpeningState extends State<Opening> {
                                width: 100.0,
 
                                decoration: BoxDecoration(
-                                 image: DecorationImage(
+                                 image: const DecorationImage(
                                      fit: BoxFit.cover,
-                                     image: NetworkImage("images/centuros.PNG")),
+                                     image: NetworkImage("images/icons/road_trip.jpg")),
                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                  color: Colors.redAccent,
                                ),
@@ -434,6 +458,7 @@ class _OpeningState extends State<Opening> {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
+
             decoration: BoxDecoration(
               color: Colors.teal,
             ),
@@ -446,15 +471,11 @@ class _OpeningState extends State<Opening> {
             onTap: (){
 
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>Opening(
+                  MaterialPageRoute(builder: (context)=>Home(
 
                   )));
             },
           ),
-
-
-
-
           ListTile(
             title: Text('Queries'),
             leading: Icon(Icons.question_mark),
@@ -501,7 +522,7 @@ class Detail extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
-        child: Center(child: Text("Detail", style: TextStyle(fontSize: 30),)),
+        child: Center(child: Text("Detail", style: const TextStyle(fontSize: 30),)),
       ),
     );
   }
