@@ -5,7 +5,9 @@ import 'package:travelling_app/Data/fasil_Mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
-
+import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
+import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
+import 'package:travelling_app/screens/homepage_remaining_screens/Viewed.dart';
 import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 
@@ -60,7 +62,7 @@ class _HomeState extends State<Home> {
             ],
 
           ),
-          
+
 
         ),
       ),
@@ -120,7 +122,7 @@ class _HomeState extends State<Home> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Home(),
+                                   New(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -140,7 +142,7 @@ class _HomeState extends State<Home> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Home(),
+                                   Most_viewed(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -160,7 +162,7 @@ class _HomeState extends State<Home> {
                              onPressed: ()=>Navigator.pushReplacement(context,
                                MaterialPageRoute(builder:
                                    (context) =>
-                                   Home(),
+                                   Recomended(),
                                ),
                              ),
                              style: ElevatedButton.styleFrom(
@@ -313,7 +315,7 @@ class _HomeState extends State<Home> {
                  },
              ),
                ),
-                 
+
 
                ],
 
@@ -527,3 +529,7 @@ class Detail extends StatelessWidget {
     );
   }
 }
+
+
+
+
