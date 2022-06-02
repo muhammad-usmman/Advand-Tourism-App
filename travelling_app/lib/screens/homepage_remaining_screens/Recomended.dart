@@ -6,7 +6,7 @@ import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
-import 'package:travelling_app/screens/homepage_remaining_screens/Viewed.dart';
+import 'package:travelling_app/screens/homepage_remaining_screens/Upcoming.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
 
 
@@ -35,11 +35,11 @@ class _RecomendedState extends State<Recomended> {
     List<Post> posts = [
     ];
 
-    // var random = Random();
-    // for (int i = 0; i < 10; i++) {
-    //   posts
-    //       .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
-    // }
+    var random = Random();
+    for (int i = 0; i < 10; i++) {
+      posts
+          .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
+    }
     return posts;
   }
   @override
@@ -144,7 +144,7 @@ class _RecomendedState extends State<Recomended> {
                                   onPressed: ()=>Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder:
                                         (context) =>
-                                        Most_viewed(),
+                                        Upcoming(),
                                     ),
                                   ),
                                   style: ElevatedButton.styleFrom(

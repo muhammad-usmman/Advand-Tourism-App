@@ -5,6 +5,7 @@ import 'package:travelling_app/Data/fasil_Mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
+import 'package:travelling_app/screens/Islamabad.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
@@ -13,11 +14,11 @@ import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 
 
-class Most_viewed extends StatefulWidget {
-  const Most_viewed({Key? key}) : super(key: key);
+class Upcoming extends StatefulWidget {
+  const Upcoming({Key? key}) : super(key: key);
 
   @override
-  State<Most_viewed> createState() => _Most_viewedState();
+  State<Upcoming> createState() => _UpcomingState();
 }
 class Post {
   final String title;
@@ -27,7 +28,7 @@ class Post {
 }
 
 
-class _Most_viewedState extends State<Most_viewed> {
+class _UpcomingState extends State<Upcoming> {
   final SearchBarController<Post> _searchBarController = SearchBarController();
   bool isReplay = false;
 
@@ -35,11 +36,11 @@ class _Most_viewedState extends State<Most_viewed> {
     List<Post> posts = [
     ];
 
-    // var random = Random();
-    // for (int i = 0; i < 10; i++) {
-    //   posts
-    //       .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
-    // }
+    var random = Random();
+    for (int i = 0; i < 10; i++) {
+      posts
+          .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
+    }
     return posts;
   }
   @override
@@ -144,7 +145,7 @@ class _Most_viewedState extends State<Most_viewed> {
                                   onPressed: ()=>Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder:
                                         (context) =>
-                                        Most_viewed(),
+                                        Upcoming(),
                                     ),
                                   ),
                                   style: ElevatedButton.styleFrom(
@@ -207,7 +208,7 @@ class _Most_viewedState extends State<Most_viewed> {
                                   onTap: (){
 
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Faasil_Mosque(
+                                        MaterialPageRoute(builder: (context)=>Islamabad(
 
                                         ))
                                     );
@@ -475,7 +476,7 @@ class _Most_viewedState extends State<Most_viewed> {
             onTap: (){
 
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>Most_viewed(
+                  MaterialPageRoute(builder: (context)=>Upcoming(
 
                   )));
             },

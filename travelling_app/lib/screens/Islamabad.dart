@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:travelling_app/Functionality_pages/Booking.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/badsahi_mosque.dart';
@@ -25,49 +24,54 @@ class _IslamabadState extends State<Islamabad> {
   Widget build(BuildContext context) {
     return  Scaffold(
 
-      appBar: AppBar(
-        title: Text('Tourism'),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(50.0),
+        child: AppBar(
+          iconTheme:const IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(
+                'images/icons/travel&tourism.jpg',
+                fit: BoxFit.contain,
+                height: 50,
+                width: 50,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(8.0), child:const  Text('Islamabad'))
+             ],
+          ),
+        ),
       ),
       body:
-      Container(
-        constraints: BoxConstraints.expand(),
-        decoration: const BoxDecoration(
-          // image: DecorationImage(
-          //     // image:AssetImage('images/bg_home.jpg',),
-          //     colorFilter:ColorFilter.linearToSrgbGamma() ,
-          //     fit: BoxFit.cover),
-
-        ),
-
-
-        child:Column(
+      Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
           children: [
-
-            Text('   Islamabad',
-            style: kHTextStyle ,
-            ),
+            // const Text('   Islamabad',
+            // style: kHTextStyle ,
+            // ),
             Expanded(
               child:
               Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(10),
-                    height : 110,
+                    padding:const EdgeInsets.all(10),
+                    height : 500,
                     child:ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-
                         InkWell(
                           child: Container(
-                            width: 200.0,
+                            alignment: Alignment.bottomLeft,
+                            child: const Text('Fasil Mosque',style: kIText,),
+                            width: 500.0,
 
-                            decoration: BoxDecoration(
+                            decoration:const BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/fasil_mosque.PNG")),
+                                  image: NetworkImage("images/Islamabad/fasilmosque.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -75,23 +79,23 @@ class _IslamabadState extends State<Islamabad> {
                           onTap: (){
 
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Faasil_Mosque(
-
-                                ))
+                                MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
                             );
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10.0,
                         ),
 
                         InkWell(
                           child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
+                            alignment: Alignment.bottomLeft,
+                            child: const Text('Pakistan Monument Museum',style: kIText,),
+                            width: 500.0,
+                            decoration:const  BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/monument.PNG")),
+                                  image: NetworkImage("images/Islamabad/monument.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -99,24 +103,23 @@ class _IslamabadState extends State<Islamabad> {
                           onTap: (){
 
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Monument(
-
-                                ))
+                                MaterialPageRoute(builder: (context)=>const Monument())
                             );
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10.0,
                         ),
 
                         InkWell(
                           child: Container(
-                            width: 200.0,
-
-                            decoration: BoxDecoration(
+                            alignment: Alignment.bottomLeft,
+                            child: const Text('Monal',style: kIText,),
+                            width: 500.0,
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/mONAL.PNG")),
+                                  image: NetworkImage("images/Islamabad/monal.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -124,24 +127,23 @@ class _IslamabadState extends State<Islamabad> {
                           onTap: (){
 
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Monal(
-
-                                ))
+                                MaterialPageRoute(builder: (context)=>const Monal())
                             );
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10.0,
                         ),
 
                         InkWell(
                           child: Container(
-                            width: 200.0,
-
-                            decoration: BoxDecoration(
+                            alignment: Alignment.bottomLeft,
+                            child: const Text('Centours',style: kIText,),
+                            width: 500.0,
+                            decoration: const  BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/centuros.PNG")),
+                                  image: NetworkImage("images/Islamabad/centours.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -149,9 +151,7 @@ class _IslamabadState extends State<Islamabad> {
                           onTap: (){
 
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Centours(
-
-                                ))
+                                MaterialPageRoute(builder: (context)=>const Centours())
                             );
                           },
                         ),
@@ -167,7 +167,7 @@ class _IslamabadState extends State<Islamabad> {
                     padding: EdgeInsets.all(10.0),
                     child: Expanded(
                       child: Column(
-                        children: [
+                        children:const  [
                           Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
                           style: kBodyTextStyle,
                           ),
@@ -202,227 +202,12 @@ class _IslamabadState extends State<Islamabad> {
                       ],
                     ),
                   )
-
-                ],
-
-
-              ),
-            ),
-
-
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: Text('   Lahore',
-                style: kHTextStyle ,
-
-              ),
-            ),
-            Expanded(
-              child:
-              Column(
-                children: [
-                  Container(
-                    height : 110,
-                    child:ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-
-                        InkWell(
-                          child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage("images/minare_pakistan.PNG")),
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                          onTap: (){
-
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Minare_Pakistan(
-
-                                ))
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-
-                        InkWell(
-                          child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage("images/lahore_fort.PNG")),
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                          onTap: (){
-
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Lahore_fort(
-
-                                ))
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-
-                        InkWell(
-                          child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage("images/badshi_mosque.PNG")),
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                          onTap: (){
-
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Badshahi(
-
-                                ))
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-
-                        InkWell(
-                          child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage("images/lahore_musem.PNG")),
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                          onTap: (){
-
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>lahore_Museum(
-
-                                ))
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-
-                        InkWell(
-                          child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage("images/shahjhan.PNG")),
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                          onTap: (){
-
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Shahjhan(
-
-                                ))
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-
-                        InkWell(
-                          child: Container(
-                            width: 200.0,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: NetworkImage("images/walled_city.PNG")),
-                              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                              color: Colors.redAccent,
-                            ),
-                          ),
-                          onTap: (){
-
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context)=>Walled_City(
-
-                                ))
-                            );
-                          },
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                      ],
-                    ),
-                  ),
-
-
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Expanded(
-                      child: Column(
-                        children: [
-                          Text("     Lahore  is the capital of the Pakistani province of Punjab, is Pakistan's 2nd largest city after Karachi, and is the 26th largest city in the world",
-                          style: kBodyTextStyle,
-                          ),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          onPressed: ()=>Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder:
-                                (context) =>
-                                Book(),
-                            ),
-                          ),
-                          child: Text(
-                            'Book Now',
-                            style: kLargeButtonStyle,
-                          ),
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.red),
-                              padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                              // textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30))
-                          ),
-
-                        ),
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
           ],
         ),
-      ),
+
       endDrawer: Drawer( child: ListView(
 
         padding: EdgeInsets.zero,
@@ -434,7 +219,7 @@ class _IslamabadState extends State<Islamabad> {
             child: Text('Travel and Tourism'),
 
           ),
-          ListTile(
+           ListTile(
             title: Text('Home'),
             leading: Icon(Icons.home),
             onTap: (){
@@ -449,7 +234,7 @@ class _IslamabadState extends State<Islamabad> {
 
 
 
-          ListTile(
+          const  ListTile(
             title: Text('Queries'),
             leading: Icon(Icons.question_mark),
             // onTap: (){
@@ -460,9 +245,9 @@ class _IslamabadState extends State<Islamabad> {
             //       )));
             // },
           ),
-          ListTile(
-            title: Text('Contact Us'),
-            leading: Icon(Icons.call),
+           const  ListTile(
+             title: Text('Contact Us'),
+             leading: Icon(Icons.call),
             // onTap: (){
             //
             //   Navigator.push(context,
@@ -471,9 +256,9 @@ class _IslamabadState extends State<Islamabad> {
             //       )));
             // },
           ),
-          ListTile(
-            title: Text('About us'),
-            leading: Icon(Icons.person),
+          const ListTile(
+             title: Text('About us'),
+             leading: Icon(Icons.person),
             // onTap: (){
             //
             //   Navigator.push(context,

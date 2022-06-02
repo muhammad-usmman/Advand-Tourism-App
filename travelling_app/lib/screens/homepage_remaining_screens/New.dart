@@ -7,7 +7,7 @@ import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
-import 'package:travelling_app/screens/homepage_remaining_screens/Viewed.dart';
+import 'package:travelling_app/screens/homepage_remaining_screens/Upcoming.dart';
 
 import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
@@ -34,11 +34,11 @@ class _NewState extends State<New> {
     List<Post> posts = [
     ];
 
-    // var random = Random();
-    // for (int i = 0; i < 10; i++) {
-    //   posts
-    //       .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
-    // }
+    var random = Random();
+    for (int i = 0; i < 10; i++) {
+      posts
+          .add(Post("$text $i", "hi: ${random.nextInt(100)}"));
+    }
     return posts;
   }
   @override
@@ -143,7 +143,7 @@ class _NewState extends State<New> {
                                   onPressed: ()=>Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder:
                                         (context) =>
-                                        Most_viewed(),
+                                        Upcoming(),
                                     ),
                                   ),
                                   style: ElevatedButton.styleFrom(
@@ -193,20 +193,22 @@ class _NewState extends State<New> {
 
                                 InkWell(
                                   child: Container(
+                                    alignment: Alignment.bottomLeft,
+                                    child: const Text('Multan',style: kIText,),
                                     width: 200.0,
 
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/shahjhan.PNG")),
-                                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                          image: NetworkImage("images/Multan_Tomb.jpg")),
+                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                       color: Colors.redAccent,
                                     ),
                                   ),
                                   onTap: (){
 
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Faasil_Mosque(
+                                        MaterialPageRoute(builder: (context)=>const Centours(
 
                                         ))
                                     );
