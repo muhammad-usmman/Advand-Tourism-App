@@ -104,9 +104,7 @@ class _HomeState extends State<Home> {
                                  primary: Colors.transparent,
                                  shadowColor: Colors.transparent,
                                  onSurface: Colors.transparent
-
                              ),
-
                              child:
                              const Text('All',
                                style: kHLStyle,
@@ -124,9 +122,7 @@ class _HomeState extends State<Home> {
                                  primary: Colors.transparent,
                                  shadowColor: Colors.transparent,
                                  onSurface: Colors.transparent
-
                              ),
-
                              child:
                              const Text('New',
                                style: kHLStyle,
@@ -457,9 +453,8 @@ class _HomeState extends State<Home> {
             onTap: (){
 
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>Home(
-
-                  )));
+                  MaterialPageRoute(builder: (context)=>Home())
+              );
             },
           ),
           ListTile(

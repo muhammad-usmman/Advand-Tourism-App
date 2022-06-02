@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/Functionality_pages/Booking.dart';
 import 'package:travelling_app/constant.dart';
-import 'package:travelling_app/Data/badsahi_mosque.dart';
+// import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/fasil_Mosque.dart';
-import 'package:travelling_app/Data/lahore_fort.dart';
-import 'package:travelling_app/Data/lahore_museum.dart';
-import 'package:travelling_app/Data/minare_Pakistan.dart';
+// import 'package:travelling_app/Data/lahore_fort.dart';
+// import 'package:travelling_app/Data/lahore_museum.dart';
+// import 'package:travelling_app/Data/minare_Pakistan.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
-import 'package:travelling_app/Data/ShahJhan.dart';
-import 'package:travelling_app/Data/walled_Citty.dart';
+// import 'package:travelling_app/Data/ShahJhan.dart';
+// import 'package:travelling_app/Data/walled_Citty.dart';
 
 class Islamabad extends StatefulWidget {
   const Islamabad({Key? key}) : super(key: key);
@@ -234,7 +234,7 @@ class _IslamabadState extends State<Islamabad> {
 
 
 
-          const  ListTile(
+           ListTile(
             title: Text('Queries'),
             leading: Icon(Icons.question_mark),
             // onTap: (){
@@ -245,7 +245,7 @@ class _IslamabadState extends State<Islamabad> {
             //       )));
             // },
           ),
-           const  ListTile(
+           ListTile(
              title: Text('Contact Us'),
              leading: Icon(Icons.call),
             // onTap: (){
@@ -256,7 +256,7 @@ class _IslamabadState extends State<Islamabad> {
             //       )));
             // },
           ),
-          const ListTile(
+           ListTile(
              title: Text('About us'),
              leading: Icon(Icons.person),
             // onTap: (){

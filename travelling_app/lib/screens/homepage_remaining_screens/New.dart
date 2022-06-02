@@ -96,14 +96,14 @@ class _NewState extends State<New> {
                       Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             child: Row(
                               children: [
                                 ElevatedButton(
                                   onPressed: ()=>Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder:
                                         (context) =>
-                                        Home(),
+                                    const Home(),
                                     ),
                                   ),
                                   style: ElevatedButton.styleFrom(
@@ -114,7 +114,7 @@ class _NewState extends State<New> {
                                   ),
 
                                   child:
-                                  Text('All',
+                                  const Text('All',
                                     style: kHLStyle,
                                   ),
 
@@ -123,18 +123,33 @@ class _NewState extends State<New> {
                                   onPressed: ()=>Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder:
                                         (context) =>
-                                        New(),
+                                    const New(),
                                     ),
                                   ),
                                   style: ElevatedButton.styleFrom(
                                       primary: Colors.transparent,
                                       shadowColor: Colors.transparent,
                                       onSurface: Colors.transparent
-
                                   ),
-
                                   child:
-                                  Text('New',
+                                  const Text('New',
+                                    style: kHLStyle,
+                                  ),
+                                ),
+                                ElevatedButton(
+                                  onPressed: ()=>Navigator.pushReplacement(context,
+                                    MaterialPageRoute(builder:
+                                        (context) =>
+                                    const Upcoming(),
+                                    ),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.transparent,
+                                      shadowColor: Colors.transparent,
+                                      onSurface: Colors.transparent
+                                  ),
+                                  child:
+                                  const Text('Upcoming',
                                     style: kHLStyle,
                                   ),
 
@@ -143,7 +158,7 @@ class _NewState extends State<New> {
                                   onPressed: ()=>Navigator.pushReplacement(context,
                                     MaterialPageRoute(builder:
                                         (context) =>
-                                        Upcoming(),
+                                    const Recomended(),
                                     ),
                                   ),
                                   style: ElevatedButton.styleFrom(
@@ -154,150 +169,118 @@ class _NewState extends State<New> {
                                   ),
 
                                   child:
-                                  Text('Most Viewed',
+                                  const Text('Recommended',
                                     style: kHLStyle,
                                   ),
 
                                 ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                        Recomended(),
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  Text('Recomended',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-
                               ],
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             height : 250,
 
                             child:ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-
                                 InkWell(
                                   child: Container(
-                                    alignment: Alignment.bottomLeft,
+                                    alignment: Alignment.bottomRight,
                                     child: const Text('Multan',style: kIText,),
                                     width: 200.0,
-
-                                    decoration: const BoxDecoration(
+                                    decoration:const BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/Multan_Tomb.jpg")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                          image: NetworkImage("images/Multan_Tomb.jpg")
+                                      ),
+                                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                       color: Colors.redAccent,
                                     ),
                                   ),
                                   onTap: (){
-
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Centours(
-
-                                        ))
+                                        MaterialPageRoute(builder: (context)=>const New())
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10.0,
                                 ),
-
                                 InkWell(
                                   child: Container(
+                                    alignment: Alignment.bottomRight,
+                                    child: const Text('Karachi',style: kIText,),
                                     width: 200.0,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/monument.PNG")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                          image: NetworkImage("images/quaidTomb.jpg")),
+                                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                                       color: Colors.redAccent,
                                     ),
                                   ),
                                   onTap: (){
-
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Monument(
-
-                                        ))
+                                        MaterialPageRoute(builder: (context)=>const Monument())
                                     );
                                   },
                                 ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-
-                                InkWell(
-                                  child: Container(
-                                    width: 200.0,
-
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/mONAL.PNG")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Monal(
-
-                                        ))
-                                    );
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-
-                                InkWell(
-                                  child: Container(
-                                    width: 200.0,
-
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/centuros.PNG")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Centours(
-
-                                        ))
-                                    );
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
+                                // InkWell(
+                                //   child: Container(
+                                //     alignment: Alignment.bottomRight,
+                                //     child: const Text('Lahore',style: kIText,),
+                                //     width: 200.0,
+                                //     decoration: const BoxDecoration(
+                                //       image: DecorationImage(
+                                //           fit: BoxFit.cover,
+                                //           image: NetworkImage("images/Badshahi.jpg")),
+                                //       borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                //       color: Colors.redAccent,
+                                //     ),
+                                //   ),
+                                //   onTap: (){
+                                //     Navigator.push(context,
+                                //         MaterialPageRoute(builder: (context)=>const Monal())
+                                //     );
+                                //   },
+                                // ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
+                                // InkWell(
+                                //   child: Container(
+                                //     alignment: Alignment.bottomRight,
+                                //     child: const Text('Multan',style: kIText,),
+                                //     width: 200.0,
+                                //
+                                //     decoration: const BoxDecoration(
+                                //       image: DecorationImage(
+                                //           fit: BoxFit.cover,
+                                //           image: NetworkImage("images/Multan_Tomb.jpg")),
+                                //       borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                //       color: Colors.redAccent,
+                                //     ),
+                                //   ),
+                                //   onTap: (){
+                                //     Navigator.push(context,
+                                //         MaterialPageRoute(builder: (context)=>const Centours())
+                                //     );
+                                //   },
+                                // ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
                               ],
                             ),
                           ),
                         ],
                       ),
-                      cancellationWidget: Text("Cancel"),
-                      emptyWidget: Text("empty"),
+                      cancellationWidget: const Text("Cancel"),
+                      emptyWidget:const Text("empty"),
                       onCancelled: () {
                         print("Cancelled triggered");
                       },
@@ -318,25 +301,20 @@ class _NewState extends State<New> {
                       },
                     ),
                   ),
-
-
                 ],
-
-
               ),
-
             ),
-            Text('Upcoming Features',
+            const Text('Upcoming Features',
               style: kLStyle,),
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Row(
 
                     children: [
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         height : 100,
 
                         child:Row(
@@ -412,10 +390,8 @@ class _NewState extends State<New> {
                               onTap: (){
 
                                 Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>Monal()
-                                    )
+                                    MaterialPageRoute(builder: (context)=>Monal())
                                 );
-
                               },
                             ),
                             SizedBox(
