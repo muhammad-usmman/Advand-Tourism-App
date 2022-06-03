@@ -1,4 +1,4 @@
-import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/fasil_Mosque.dart';
@@ -60,8 +60,8 @@ class _UpcomingState extends State<Upcoming> {
                 height: 50,
                 width: 50,
               ),
-              // Container(
-              //     padding: const EdgeInsets.all(8.0), child: Text('YourAppTitle'))
+              Container(
+                  padding: const EdgeInsets.all(8.0), child: Text('Islamabad'))
             ],
 
           ),
@@ -112,14 +112,11 @@ class _UpcomingState extends State<Upcoming> {
                                       primary: Colors.transparent,
                                       shadowColor: Colors.transparent,
                                       onSurface: Colors.transparent
-
                                   ),
-
                                   child:
                                   Text('All',
                                     style: kHLStyle,
                                   ),
-
                                 ),
                                 ElevatedButton(
                                   onPressed: ()=>Navigator.pushReplacement(context,
@@ -132,9 +129,7 @@ class _UpcomingState extends State<Upcoming> {
                                       primary: Colors.transparent,
                                       shadowColor: Colors.transparent,
                                       onSurface: Colors.transparent
-
                                   ),
-
                                   child:
                                   Text('New',
                                     style: kHLStyle,
@@ -152,11 +147,9 @@ class _UpcomingState extends State<Upcoming> {
                                       primary: Colors.transparent,
                                       shadowColor: Colors.transparent,
                                       onSurface: Colors.transparent
-
                                   ),
-
                                   child:
-                                  Text('Most Viewed',
+                                  Text('Upcoming',
                                     style: kHLStyle,
                                   ),
 
@@ -172,9 +165,7 @@ class _UpcomingState extends State<Upcoming> {
                                       primary: Colors.transparent,
                                       shadowColor: Colors.transparent,
                                       onSurface: Colors.transparent
-
                                   ),
-
                                   child:
                                   Text('Recomended',
                                     style: kHLStyle,
@@ -196,7 +187,6 @@ class _UpcomingState extends State<Upcoming> {
                                 InkWell(
                                   child: Container(
                                     width: 200.0,
-
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
@@ -206,18 +196,14 @@ class _UpcomingState extends State<Upcoming> {
                                     ),
                                   ),
                                   onTap: (){
-
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Islamabad(
-
-                                        ))
+                                        MaterialPageRoute(builder: (context)=>Islamabad())
                                     );
                                   },
                                 ),
                                 SizedBox(
                                   width: 10.0,
                                 ),
-
                                 InkWell(
                                   child: Container(
                                     width: 200.0,
@@ -318,13 +304,8 @@ class _UpcomingState extends State<Upcoming> {
                       },
                     ),
                   ),
-
-
                 ],
-
-
               ),
-
             ),
             Text('Upcoming Features',
               style: kLStyle,),
@@ -463,9 +444,11 @@ class _UpcomingState extends State<Upcoming> {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-
             decoration: BoxDecoration(
-              color: Colors.teal,
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage("images/icons/travel&tourism.jpg")),
+
             ),
             child: Text('Travel and Tourism'),
 

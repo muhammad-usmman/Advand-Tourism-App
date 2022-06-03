@@ -51,6 +51,10 @@ flutter:
   assets:
     - images/
     - images/icons/travel&tourism.jpg
+
+
+
+
   fonts:
     - family: DancingScript
       fonts:

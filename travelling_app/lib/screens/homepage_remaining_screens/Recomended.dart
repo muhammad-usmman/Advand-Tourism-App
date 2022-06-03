@@ -1,4 +1,4 @@
-import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/fasil_Mosque.dart';
@@ -155,7 +155,7 @@ class _RecomendedState extends State<Recomended> {
                                   ),
 
                                   child:
-                                  Text('Most Viewed',
+                                  Text('Upcoming',
                                     style: kHLStyle,
                                   ),
 
@@ -462,9 +462,11 @@ class _RecomendedState extends State<Recomended> {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-
             decoration: BoxDecoration(
-              color: Colors.teal,
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage("images/icons/travel&tourism.jpg")),
+
             ),
             child: Text('Travel and Tourism'),
 

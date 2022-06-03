@@ -214,7 +214,10 @@ class _IslamabadState extends State<Islamabad> {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.teal,
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage("images/icons/travel&tourism.jpg")),
+
             ),
             child: Text('Travel and Tourism'),
 

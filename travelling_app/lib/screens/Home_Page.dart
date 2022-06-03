@@ -182,7 +182,7 @@ class _HomeState extends State<Home> {
                          children: [
                            InkWell(
                              child: Container(
-                               alignment: Alignment.bottomRight,
+                               alignment: Alignment.bottomLeft,
                                child: const Text('Islamabad',style: kIText,),
                                width: 200.0,
                                decoration:const BoxDecoration(
@@ -440,9 +440,11 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-
             decoration: BoxDecoration(
-              color: Colors.teal,
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage("images/icons/travel&tourism.jpg")),
+
             ),
             child: Text('Travel and Tourism'),
 

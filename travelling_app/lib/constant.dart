@@ -49,4 +49,5 @@ const kIText=TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold,
   fontStyle: FontStyle.italic,
+  color: Colors.white
 );
