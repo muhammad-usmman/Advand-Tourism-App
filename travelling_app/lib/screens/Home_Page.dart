@@ -91,86 +91,87 @@ class _HomeState extends State<Home> {
                    children: [
                      Padding(
                        padding: const EdgeInsets.all(10),
-                       child: Row(
-                         children: [
-                           ElevatedButton(
-                             onPressed: ()=>Navigator.pushReplacement(context,
-                               MaterialPageRoute(builder:
-                                   (context) =>
-                                   const Home(),
+                       child: SingleChildScrollView(
+                         scrollDirection: Axis.horizontal,
+                         child: Row(
+                           children: [
+                             ElevatedButton(
+                               onPressed: ()=>Navigator.pushReplacement(context,
+                                 MaterialPageRoute(builder:
+                                     (context) =>
+                                     const Home(),
+                                 ),
                                ),
-                             ),
-                             style: ElevatedButton.styleFrom(
-                                 primary: Colors.transparent,
-                                 shadowColor: Colors.transparent,
-                                 onSurface: Colors.transparent
-                             ),
-                             child:
-                             const Text('All',
-                               style: kHLStyle,
-                             ),
-
-                           ),
-                           ElevatedButton(
-                             onPressed: ()=>Navigator.pushReplacement(context,
-                               MaterialPageRoute(builder:
-                                   (context) =>
-                                   const New(),
+                               style: ElevatedButton.styleFrom(
+                                   primary: Colors.transparent,
+                                   shadowColor: Colors.transparent,
+                                   onSurface: Colors.transparent
                                ),
-                             ),
-                             style: ElevatedButton.styleFrom(
-                                 primary: Colors.transparent,
-                                 shadowColor: Colors.transparent,
-                                 onSurface: Colors.transparent
-                             ),
-                             child:
-                             const Text('New',
-                               style: kHLStyle,
-                             ),
-
-                           ),
-                           ElevatedButton(
-                             onPressed: ()=>Navigator.pushReplacement(context,
-                               MaterialPageRoute(builder:
-                                   (context) =>
-                                   const Upcoming(),
+                               child:
+                               const Text('All',
+                                 style: kHLStyle,
                                ),
-                             ),
-                             style: ElevatedButton.styleFrom(
-                                 primary: Colors.transparent,
-                                 shadowColor: Colors.transparent,
-                                 onSurface: Colors.transparent
 
                              ),
-
-                             child:
-                             const Text('Upcoming',
-                               style: kHLStyle,
-                             ),
-
-                           ),
-                           ElevatedButton(
-                             onPressed: ()=>Navigator.pushReplacement(context,
-                               MaterialPageRoute(builder:
-                                   (context) =>
-                                   const Recomended(),
+                             ElevatedButton(
+                               onPressed: ()=>Navigator.pushReplacement(context,
+                                 MaterialPageRoute(builder:
+                                     (context) =>
+                                     const New(),
+                                 ),
                                ),
-                             ),
-                             style: ElevatedButton.styleFrom(
-                                 primary: Colors.transparent,
-                                 shadowColor: Colors.transparent,
-                                 onSurface: Colors.transparent
+                               style: ElevatedButton.styleFrom(
+                                   primary: Colors.transparent,
+                                   shadowColor: Colors.transparent,
+                                   onSurface: Colors.transparent
+                               ),
+                               child:
+                               const Text('New',
+                                 style: kHLStyle,
+                               ),
 
                              ),
+                             ElevatedButton(
+                               onPressed: ()=>Navigator.pushReplacement(context,
+                                 MaterialPageRoute(builder:
+                                     (context) =>
+                                     const Upcoming(),
+                                 ),
+                               ),
+                               style: ElevatedButton.styleFrom(
+                                   primary: Colors.transparent,
+                                   shadowColor: Colors.transparent,
+                                   onSurface: Colors.transparent
 
-                             child:
-                             const Text('Recommended',
-                               style: kHLStyle,
+                               ),
+
+                               child:
+                               const Text('Upcoming',
+                                 style: kHLStyle,
+                               ),
+
+                             ),
+                             ElevatedButton(
+                               onPressed: ()=>Navigator.pushReplacement(context,
+                                 MaterialPageRoute(builder:
+                                     (context) =>
+                                     const Recomended(),
+                                 ),
+                               ),
+                               style: ElevatedButton.styleFrom(
+                                   primary: Colors.transparent,
+                                   shadowColor: Colors.transparent,
+                                   onSurface: Colors.transparent
+                               ),
+                               child:
+                               const Text('Recommended',
+                                 style: kHLStyle,
+                               ),
+
                              ),
 
-                           ),
-
-                         ],
+                           ],
+                         ),
                        ),
                      ),
                      Container(
@@ -333,8 +334,7 @@ class _HomeState extends State<Home> {
                                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                  color: Colors.redAccent,
                                ),
-                               // child:
-                               // const Text('Hotels',style: kLStyle,),
+                               //
                              ),
                              onTap: (){
 
@@ -385,8 +385,7 @@ class _HomeState extends State<Home> {
                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                  color: Colors.redAccent,
                                ),
-                               // child:
-                               // // Text('Cruise')
+
                              ),
                              onTap: (){
 
@@ -435,7 +434,13 @@ class _HomeState extends State<Home> {
          ],
        ),
       ),
-      endDrawer: Drawer( child: ListView(
+      endDrawer: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        child: ListView(
 
         padding: EdgeInsets.zero,
         children: [

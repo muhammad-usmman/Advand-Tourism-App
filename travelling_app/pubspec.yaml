@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_search_bar: ^2.1.0
   flappy_search_bar: ^1.7.2
+  font_awesome_flutter: 10.1.0
 
 dev_dependencies:
   flutter_test:
@@ -51,14 +52,16 @@ flutter:
   assets:
     - images/
     - images/icons/travel&tourism.jpg
+    - images/Islamabad/fasilmosque.jpg
 
 
 
 
   fonts:
-    - family: DancingScript
+    - family: Poppins
       fonts:
-        - asset: fonts/DancingScript-Regular.ttf
+        - asset: fonts/Poppins-SemiBoldItalic.ttf
+
 
 
 

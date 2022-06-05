@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-
+const activecolor = Colors.red;
+const deactivecolor = Colors.transparent;
 
 
 
@@ -36,13 +37,13 @@ const kBodyTextStyle=TextStyle(
 const kHLStyle=TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.normal,
-    fontFamily:'DancingScript',
+    fontFamily:'Poppins',
     color: Colors.black
 );
 const kLStyle=TextStyle(
-    fontSize: 30.0,
+    fontSize: 25.0,
     fontWeight: FontWeight.bold,
-    fontFamily:'DancingScript',
+    fontFamily:'Poppins',
     color: Colors.black
 );
 const kIText=TextStyle(

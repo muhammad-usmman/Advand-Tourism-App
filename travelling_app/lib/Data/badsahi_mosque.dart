@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../Dreawer/Contact.dart';
+import '../Dreawer/about.dart';
+import '../screens/Home_Page.dart';
 
+enum Gender{
+  male,
+  female,
+  other,
+}
 class Badshahi extends StatefulWidget {
   const Badshahi({Key? key}) : super(key: key);
 
@@ -10,6 +19,7 @@ class Badshahi extends StatefulWidget {
 }
 
 class _BadshahiState extends State<Badshahi> {
+  Gender selectGender=Gender.other;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,61 +50,59 @@ class _BadshahiState extends State<Badshahi> {
       // child:
       // Padding(
       //   padding: EdgeInsets.all(10),
-        child: Container(
-
-          child:Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Badshahi Mosque",style: TextStyle(fontSize: 30),),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "The Badshahi Mosque is a Mughal-era congregational \n"
-                    "mosque in Lahore, capital of the Pakistani province\n "
-                    "of Punjab, Pakistan. The mosque is located west of \n"
-                    " Lahore Fort along the outskirts of the Walled City \n "
-                    "of Lahore, and is widely considered to be one of Lahore's \n"
-                    " most iconic landmarks.",
-                style: kImageText,
-              ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                ElevatedButton.icon(
-                icon: Icon(
-                Icons.heart_broken,
-                  color: Colors.red,
-                  size: 30.0,
-                ),
-                label: Text('Like'),
-                onPressed: () {
-                  print('Liked');
-                },
-                // style: ElevatedButton.styleFrom(
-                //   shape: new RoundedRectangleBorder(
-                //     borderRadius: new BorderRadius.circular(20.0),
-                //   ),
-                  style: ButtonStyle(
-                    backgroundColor:   MaterialStateProperty.all(Colors.transparent),
-                    padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Badshahi Mosque",style: TextStyle(fontSize: 30),),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "The Badshahi Mosque is a Mughal-era congregational \n"
+                  "mosque in Lahore, capital of the Pakistani province\n "
+                  "of Punjab, Pakistan. The mosque is located west of \n"
+                  " Lahore Fort along the outskirts of the Walled City \n "
+                  "of Lahore, and is widely considered to be one of Lahore's \n"
+                  " most iconic landmarks.",
+              style: kImageText,
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  RepeatContainerCode(
+                    onPressed: (){
+                      setState(() {
+                        selectGender=Gender.male;
+                      });
+                    },
+                    colors: selectGender==Gender.male
+                        ? activecolor
+                        :deactivecolor,
+                    cardwidget: RepeatTextAndIconWidget(
+                      iconData: FontAwesomeIcons.heart,
+                      label:'Like',
+                    ),
                   ),
-                ),
 
-                  ],
-                ),
-              )
-            ],
-          ) ,
+                ],
+              ),
+            )
+          ],
         ),
       // ),
       
     ),
-      drawer: Drawer( child: ListView(
+      drawer: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        child: ListView(
 
     padding: EdgeInsets.zero,
       children: [
@@ -108,13 +116,13 @@ class _BadshahiState extends State<Badshahi> {
         ListTile(
           title: Text('Home'),
           leading: Icon(Icons.home),
-          // onTap: (){
-          //
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context)=>Home(
-          //
-          //       )));
-          // },
+          onTap: (){
+
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>Home(
+
+                )));
+          },
         ),
 
 
@@ -123,35 +131,35 @@ class _BadshahiState extends State<Badshahi> {
         ListTile(
           title: Text('Queries'),
           leading: Icon(Icons.question_mark),
-          // onTap: (){
-          //
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context)=>About(
-          //
-          //       )));
-          // },
+          onTap: (){
+
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>About(
+
+                )));
+          },
         ),
         ListTile(
           title: Text('Contact Us'),
           leading: Icon(Icons.call),
-          // onTap: (){
-          //
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context)=>Contact(
-          //
-          //       )));
-          // },
+          onTap: (){
+
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>Contact(
+
+                )));
+          },
         ),
         ListTile(
           title: Text('About us'),
           leading: Icon(Icons.person),
-          // onTap: (){
-          //
-          //   Navigator.push(context,
-          //       MaterialPageRoute(builder: (context)=>About(
-          //
-          //       )));
-          // },
+          onTap: (){
+
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>About(
+
+                )));
+          },
         ),
       ],
     ),),
@@ -159,3 +167,55 @@ class _BadshahiState extends State<Badshahi> {
     );
   }
 }
+
+
+class RepeatTextAndIconWidget extends StatelessWidget {
+  RepeatTextAndIconWidget({ required this.iconData, required this.label});
+
+  final IconData iconData;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          iconData,
+          size: 85.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          label,
+          style: kHTextStyle,
+        )
+
+      ],
+
+    );
+  }
+}
+
+  class RepeatContainerCode extends StatelessWidget {
+  RepeatContainerCode({this.colors,this.cardwidget,this.onPressed});
+  final Color? colors;
+  final Widget? cardwidget;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+  return GestureDetector(
+  onTap: onPressed,
+  child: Container(
+  margin: EdgeInsets.all(15.0),
+  child: cardwidget,
+  decoration: BoxDecoration(
+  color: colors,
+  borderRadius: BorderRadius.circular(10.0)
+  ),
+  ),
+  );
+  }
+  }

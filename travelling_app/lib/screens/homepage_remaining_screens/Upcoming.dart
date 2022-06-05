@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/Data/fasil_Mosque.dart';
@@ -9,7 +8,6 @@ import 'package:travelling_app/screens/Islamabad.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
-
 import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 
@@ -177,104 +175,100 @@ class _UpcomingState extends State<Upcoming> {
                             ),
                           ),
                           Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             height : 250,
 
                             child:ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-
                                 InkWell(
                                   child: Container(
+                                    alignment: Alignment.bottomLeft,
+                                    child: const Text('Islamabad',style: kIText,),
                                     width: 200.0,
-                                    decoration: BoxDecoration(
+                                    decoration:const BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/fasil_mosque.PNG")),
+                                          image: NetworkImage("images/Islamabad/fasilmosque.jpg")
+                                      ),
                                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                       color: Colors.redAccent,
                                     ),
                                   ),
                                   onTap: (){
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Islamabad())
+                                        MaterialPageRoute(builder: (context)=>const Islamabad())
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10.0,
                                 ),
                                 InkWell(
                                   child: Container(
+                                    alignment: Alignment.bottomRight,
+                                    child: const Text('Karachi',style: kIText,),
                                     width: 200.0,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/monument.PNG")),
+                                          image: NetworkImage("images/quaidTomb.jpg")),
+                                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                                      color: Colors.redAccent,
+                                    ),
+                                  ),
+                                  onTap: (){
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context)=>const Monument())
+                                    );
+                                  },
+                                ),
+                                const SizedBox(
+                                  width: 10.0,
+                                ),
+                                InkWell(
+                                  child: Container(
+                                    alignment: Alignment.bottomRight,
+                                    child: const Text('Lahore',style: kIText,),
+                                    width: 200.0,
+                                    decoration: const BoxDecoration(
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: NetworkImage("images/Badshahi.jpg")),
                                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                       color: Colors.redAccent,
                                     ),
                                   ),
                                   onTap: (){
-
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Monument(
-
-                                        ))
+                                        MaterialPageRoute(builder: (context)=>const Monal())
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10.0,
                                 ),
-
                                 InkWell(
                                   child: Container(
+                                    alignment: Alignment.bottomRight,
+                                    child: const Text('Multan',style: kIText,),
                                     width: 200.0,
 
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/mONAL.PNG")),
+                                          image: NetworkImage("images/Multan_Tomb.jpg")),
                                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                       color: Colors.redAccent,
                                     ),
                                   ),
                                   onTap: (){
-
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Monal(
-
-                                        ))
+                                        MaterialPageRoute(builder: (context)=>const Centours())
                                     );
                                   },
                                 ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-
-                                InkWell(
-                                  child: Container(
-                                    width: 200.0,
-
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/centuros.PNG")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>Centours(
-
-                                        ))
-                                    );
-                                  },
-                                ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10.0,
                                 ),
                               ],
@@ -439,7 +433,13 @@ class _UpcomingState extends State<Upcoming> {
           ],
         ),
       ),
-      endDrawer: Drawer( child: ListView(
+      endDrawer: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        child: ListView(
 
         padding: EdgeInsets.zero,
         children: [

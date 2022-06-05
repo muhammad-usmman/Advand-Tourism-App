@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travelling_app/Functionality_pages/Booking.dart';
 import 'package:travelling_app/constant.dart';
 // import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
@@ -9,6 +8,10 @@ import 'package:travelling_app/Data/fasil_Mosque.dart';
 // import 'package:travelling_app/Data/minare_Pakistan.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
+import 'package:travelling_app/screens/Home_Page.dart';
+
+import '../Dreawer/Contact.dart';
+import '../Dreawer/about.dart';
 // import 'package:travelling_app/Data/ShahJhan.dart';
 // import 'package:travelling_app/Data/walled_Citty.dart';
 
@@ -49,9 +52,7 @@ class _IslamabadState extends State<Islamabad> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            // const Text('   Islamabad',
-            // style: kHTextStyle ,
-            // ),
+
             Expanded(
               child:
               Column(
@@ -175,40 +176,19 @@ class _IslamabadState extends State<Islamabad> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          onPressed: ()=>Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder:
-                                (context) =>
-                                Book(),
-                            ),
-                          ),
-                          child: Text(
-                            'Book Now',
-                            style: kLargeButtonStyle,
-                          ),
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.red),
-                            padding: MaterialStateProperty.all(EdgeInsets.all(20)),
-                            // textStyle: MaterialStateProperty.all(TextStyle(fontSize: 30))
-                          ),
-
-                        ),
-                      ],
-                    ),
-                  )
                 ],
               ),
             ),
           ],
         ),
 
-      endDrawer: Drawer( child: ListView(
+      endDrawer: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        child: ListView(
 
         padding: EdgeInsets.zero,
         children: [
@@ -228,7 +208,7 @@ class _IslamabadState extends State<Islamabad> {
             onTap: (){
 
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>Islamabad(
+                  MaterialPageRoute(builder: (context)=>Home(
 
                   )));
             },
@@ -240,35 +220,34 @@ class _IslamabadState extends State<Islamabad> {
            ListTile(
             title: Text('Queries'),
             leading: Icon(Icons.question_mark),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>About(
-            //
-            //       )));
-            // },
+            onTap: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>About(
+
+                  )));
+            },
           ),
            ListTile(
              title: Text('Contact Us'),
              leading: Icon(Icons.call),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>Contact(
-            //
-            //       )));
-            // },
+            onTap: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>Contact(
+                  )));
+            },
           ),
            ListTile(
              title: Text('About us'),
              leading: Icon(Icons.person),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>About(
-            //
-            //       )));
-            // },
+            onTap: (){
+
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>About(
+
+                  )));
+            },
           ),
         ],
       ),),

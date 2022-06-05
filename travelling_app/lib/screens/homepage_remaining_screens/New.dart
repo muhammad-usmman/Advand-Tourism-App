@@ -434,7 +434,13 @@ class _NewState extends State<New> {
           ],
         ),
       ),
-      endDrawer: Drawer( child: ListView(
+      endDrawer: Drawer(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20),
+              bottomRight: Radius.circular(20)),
+        ),
+        child: ListView(
 
         padding: EdgeInsets.zero,
         children: [
