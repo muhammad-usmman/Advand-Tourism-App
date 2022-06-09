@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
-// import 'package:travelling_app/Data/badsahi_mosque.dart';
+import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
-import 'package:travelling_app/Data/fasil_Mosque.dart';
+// import 'package:travelling_app/Data/fasil_Mosque.dart';
 // import 'package:travelling_app/Data/lahore_fort.dart';
 // import 'package:travelling_app/Data/lahore_museum.dart';
 // import 'package:travelling_app/Data/minare_Pakistan.dart';
@@ -42,7 +42,7 @@ class _LahoreState extends State<Lahore> {
                 width: 50,
               ),
               Container(
-                  padding: const EdgeInsets.all(8.0), child:const  Text('Islamabad'))
+                  padding: const EdgeInsets.all(8.0), child:const  Text('Lahore'))
             ],
           ),
         ),
@@ -52,7 +52,6 @@ class _LahoreState extends State<Lahore> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-
           Expanded(
             child:
             Column(
@@ -66,21 +65,19 @@ class _LahoreState extends State<Lahore> {
                       InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('Fasil Mosque',style: kIText,),
+                          child: const Text('Badshahi Mosque',style: kIText,),
                           width: 500.0,
-
                           decoration:const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("images/Islamabad/fasilmosque.jpg")),
+                                image: NetworkImage("images/Badshahi.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
                         onTap: (){
-
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
+                              MaterialPageRoute(builder: (context)=>const Badshahi())
                           );
                         },
                       ),
@@ -91,12 +88,12 @@ class _LahoreState extends State<Lahore> {
                       InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('Pakistan Monument Museum',style: kIText,),
+                          child: const Text('Lahore Fort',style: kIText,),
                           width: 500.0,
                           decoration:const  BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("images/Islamabad/monument.jpg")),
+                                image: NetworkImage("images/lahore/lahoreFort.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
@@ -115,12 +112,12 @@ class _LahoreState extends State<Lahore> {
                       InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('Monal',style: kIText,),
+                          child: const Text('Lahore Museum',style: kIText,),
                           width: 500.0,
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("images/Islamabad/monal.jpg")),
+                                image: NetworkImage("images/lahore/Museum.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
@@ -139,12 +136,58 @@ class _LahoreState extends State<Lahore> {
                       InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('Centours',style: kIText,),
+                          child: const Text('Minar e Pakistan',style: kIText,),
                           width: 500.0,
                           decoration: const  BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("images/Islamabad/centours.jpg")),
+                                image: NetworkImage("images/lahore/minarepakistan.jpg")),
+                            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                            color: Colors.redAccent,
+                          ),
+                        ),
+                        onTap: (){
+
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>const Centours())
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      InkWell(
+                        child: Container(
+                          alignment: Alignment.bottomLeft,
+                          child: const Text('Shahjhan Tomb',style: kIText,),
+                          width: 500.0,
+                          decoration: const  BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage("images/lahore/shahjhan.jpg")),
+                            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                            color: Colors.redAccent,
+                          ),
+                        ),
+                        onTap: (){
+
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>const Centours())
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      InkWell(
+                        child: Container(
+                          alignment: Alignment.bottomLeft,
+                          child: const Text('Walled City of Lahore',style: kIText,),
+                          width: 500.0,
+                          decoration: const  BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage("images/lahore/walledCity.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
@@ -169,7 +212,7 @@ class _LahoreState extends State<Lahore> {
                   child: Expanded(
                     child: Column(
                       children:const  [
-                        Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
+                        Text("Lahore exerts a strong cultural influence over Pakistan.[15] It is a UNESCO City of Literature and major center for Pakistan's publishing industry; Lahore remains the foremost center of Pakistan's literary scene.",
                           style: kBodyTextStyle,
                         ),
                       ],

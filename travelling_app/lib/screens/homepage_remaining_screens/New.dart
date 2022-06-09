@@ -58,13 +58,8 @@ class _NewState extends State<New> {
                 height: 50,
                 width: 50,
               ),
-              // Container(
-              //     padding: const EdgeInsets.all(8.0), child: Text('YourAppTitle'))
             ],
-
           ),
-
-
         ),
       ),
       backgroundColor: Colors.white,
@@ -97,84 +92,80 @@ class _NewState extends State<New> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(10),
-                            child: Row(
-                              children: [
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                    const Home(),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                      const Home(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+                                    ),
+                                    child:
+                                    const Text('All',
+                                      style: kHLStyle,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  const Text('All',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                    const New(),
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                      const New(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+                                    ),
+                                    child:
+                                    const Text('New',
+                                      style: kHLStyle,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-                                  ),
-                                  child:
-                                  const Text('New',
-                                    style: kHLStyle,
-                                  ),
-                                ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                    const Upcoming(),
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                      const Upcoming(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+                                    ),
+                                    child:
+                                    const Text('Upcoming',
+                                      style: kHLStyle,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-                                  ),
-                                  child:
-                                  const Text('Upcoming',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                    const Recomended(),
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                      const Recomended(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+                                    ),
+                                    child:
+                                    const Text('Recommended',
+                                      style: kHLStyle,
                                     ),
                                   ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  const Text('Recommended',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           Container(
@@ -311,16 +302,12 @@ class _NewState extends State<New> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
-
                     children: [
                       Container(
                         padding: const EdgeInsets.all(10),
                         height : 100,
-
                         child:Row(
-                          // scrollDirection: Axis.horizontal,
                           children: [
-
                             InkWell(
                               child:  Container(
                                 width: 100.0,
@@ -328,19 +315,13 @@ class _NewState extends State<New> {
                                   image: DecorationImage(
                                       fit: BoxFit.cover,
                                       image: NetworkImage("images/icons/hotels.jpg")),
-
                                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                   color: Colors.redAccent,
                                 ),
-                                // child:
-                                // const Text('Hotels',style: kLStyle,),
                               ),
                               onTap: (){
-
                                 Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>const Faasil_Mosque(
-
-                                    ))
+                                    MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
                                 );
                               },
                             ),
@@ -360,11 +341,8 @@ class _NewState extends State<New> {
                                 ),
                               ),
                               onTap: (){
-
                                 Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>const Monument(
-
-                                    ))
+                                    MaterialPageRoute(builder: (context)=>const Monument())
                                 );
                               },
                             ),
@@ -376,7 +354,6 @@ class _NewState extends State<New> {
                               child:
                               Container(
                                 width: 100.0,
-
                                 decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       fit: BoxFit.cover,
@@ -388,7 +365,6 @@ class _NewState extends State<New> {
                                 // // Text('Cruise')
                               ),
                               onTap: (){
-
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (context)=>Monal())
                                 );
@@ -401,7 +377,6 @@ class _NewState extends State<New> {
                             InkWell(
                               child: Container(
                                 width: 100.0,
-
                                 decoration: BoxDecoration(
                                   image: const DecorationImage(
                                       fit: BoxFit.cover,
@@ -411,11 +386,8 @@ class _NewState extends State<New> {
                                 ),
                               ),
                               onTap: (){
-
                                 Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>Centours(
-
-                                    ))
+                                    MaterialPageRoute(builder: (context)=>Centours())
                                 );
                               },
                             ),
@@ -428,7 +400,6 @@ class _NewState extends State<New> {
                     ],
                   ),
                 ),
-
               ],
             )
           ],

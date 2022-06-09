@@ -54,12 +54,12 @@ class _Faasil_MosqueState extends State<Faasil_Mosque> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Badshahi Mosque",style: TextStyle(fontSize: 30),),
+            Text("Fasil Mosque",style: TextStyle(fontSize: 30),),
             SizedBox(
               height: 20,
             ),
-            Text(
-              "TThe Faisal Mosque is the national mosque of Pakistan,\n"
+           const Text(
+              "The Faisal Mosque is the national mosque of Pakistan,\n"
                   "located in capital Islamabad.[1][2] It is the sixth-largest\n"
                   "mosque in the world and the largest within South Asia, \n"
                   "located on the foothills of Margalla Hills in Pakistan's capital city of Islamabad. \n"

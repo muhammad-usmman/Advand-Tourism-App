@@ -52,7 +52,6 @@ class _IslamabadState extends State<Islamabad> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-
             Expanded(
               child:
               Column(
@@ -68,7 +67,6 @@ class _IslamabadState extends State<Islamabad> {
                             alignment: Alignment.bottomLeft,
                             child: const Text('Fasil Mosque',style: kIText,),
                             width: 500.0,
-
                             decoration:const BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
@@ -78,7 +76,6 @@ class _IslamabadState extends State<Islamabad> {
                             ),
                           ),
                           onTap: (){
-
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
                             );

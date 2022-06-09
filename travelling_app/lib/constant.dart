@@ -17,7 +17,7 @@ const kTitleStyleS2=TextStyle(
   fontWeight: FontWeight.bold,
 );
 const kImageText=TextStyle(
-  fontSize: 15.0,
+  fontSize: 20.0,
   fontWeight: FontWeight.bold,
   fontStyle: FontStyle.italic,
 );

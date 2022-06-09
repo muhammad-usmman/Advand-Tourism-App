@@ -5,6 +5,7 @@ import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/Islamabad.dart';
+import 'package:travelling_app/screens/Lahore.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Upcoming.dart';
@@ -183,7 +184,7 @@ class _HomeState extends State<Home> {
                          children: [
                            InkWell(
                              child: Container(
-                               alignment: Alignment.bottomLeft,
+                               alignment: Alignment.bottomRight,
                                child: const Text('Islamabad',style: kIText,),
                                width: 200.0,
                                decoration:const BoxDecoration(
@@ -241,7 +242,7 @@ class _HomeState extends State<Home> {
                              ),
                              onTap: (){
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>const Monal())
+                                   MaterialPageRoute(builder: (context)=>const Lahore())
                                );
                              },
                            ),

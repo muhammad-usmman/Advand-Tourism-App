@@ -193,7 +193,7 @@ class _RecomendedState extends State<Recomended> {
                               children: [
                                 InkWell(
                                   child: Container(
-                                    alignment: Alignment.bottomLeft,
+                                    alignment: Alignment.bottomRight,
                                     child: const Text('Islamabad',style: kIText,),
                                     width: 200.0,
                                     decoration:const BoxDecoration(

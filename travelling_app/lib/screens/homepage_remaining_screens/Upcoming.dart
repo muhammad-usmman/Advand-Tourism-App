@@ -183,13 +183,13 @@ class _UpcomingState extends State<Upcoming> {
                               children: [
                                 InkWell(
                                   child: Container(
-                                    alignment: Alignment.bottomLeft,
-                                    child: const Text('Islamabad',style: kIText,),
+                                    alignment: Alignment.bottomRight,
+                                    child: const Text('Peshawar',style: kIText,),
                                     width: 200.0,
                                     decoration:const BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.cover,
-                                          image: NetworkImage("images/Islamabad/fasilmosque.jpg")
+                                          image: NetworkImage("images/Peshawar-University.jpg")
                                       ),
                                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                       color: Colors.redAccent,
@@ -201,76 +201,76 @@ class _UpcomingState extends State<Upcoming> {
                                     );
                                   },
                                 ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Karachi',style: kIText,),
-                                    width: 200.0,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/quaidTomb.jpg")),
-                                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Monument())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Lahore',style: kIText,),
-                                    width: 200.0,
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/Badshahi.jpg")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Monal())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Multan',style: kIText,),
-                                    width: 200.0,
-
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/Multan_Tomb.jpg")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Centours())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
+                                // InkWell(
+                                //   child: Container(
+                                //     alignment: Alignment.bottomRight,
+                                //     child: const Text('Karachi',style: kIText,),
+                                //     width: 200.0,
+                                //     decoration: BoxDecoration(
+                                //       image: DecorationImage(
+                                //           fit: BoxFit.cover,
+                                //           image: NetworkImage("images/quaidTomb.jpg")),
+                                //       borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                                //       color: Colors.redAccent,
+                                //     ),
+                                //   ),
+                                //   onTap: (){
+                                //     Navigator.push(context,
+                                //         MaterialPageRoute(builder: (context)=>const Monument())
+                                //     );
+                                //   },
+                                // ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
+                                // InkWell(
+                                //   child: Container(
+                                //     alignment: Alignment.bottomRight,
+                                //     child: const Text('Lahore',style: kIText,),
+                                //     width: 200.0,
+                                //     decoration: const BoxDecoration(
+                                //       image: DecorationImage(
+                                //           fit: BoxFit.cover,
+                                //           image: NetworkImage("images/Badshahi.jpg")),
+                                //       borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                //       color: Colors.redAccent,
+                                //     ),
+                                //   ),
+                                //   onTap: (){
+                                //     Navigator.push(context,
+                                //         MaterialPageRoute(builder: (context)=>const Monal())
+                                //     );
+                                //   },
+                                // ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
+                                // InkWell(
+                                //   child: Container(
+                                //     alignment: Alignment.bottomRight,
+                                //     child: const Text('Multan',style: kIText,),
+                                //     width: 200.0,
+                                //
+                                //     decoration: const BoxDecoration(
+                                //       image: DecorationImage(
+                                //           fit: BoxFit.cover,
+                                //           image: NetworkImage("images/Multan_Tomb.jpg")),
+                                //       borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                //       color: Colors.redAccent,
+                                //     ),
+                                //   ),
+                                //   onTap: (){
+                                //     Navigator.push(context,
+                                //         MaterialPageRoute(builder: (context)=>const Centours())
+                                //     );
+                                //   },
+                                // ),
+                                // const SizedBox(
+                                //   width: 10.0,
+                                // ),
                               ],
                             ),
                           ),
