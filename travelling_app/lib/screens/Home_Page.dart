@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
-import 'package:travelling_app/Data/fasil_Mosque.dart';
+import 'package:travelling_app/hotel_booking/hotel_pages/hotel_home_page.dart';
 import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
@@ -11,6 +11,8 @@ import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dar
 import 'package:travelling_app/screens/homepage_remaining_screens/Upcoming.dart';
 import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
+import '../Dreawer/Contact.dart';
+import '../Dreawer/about.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -112,7 +114,6 @@ class _HomeState extends State<Home> {
                                const Text('All',
                                  style: kHLStyle,
                                ),
-
                              ),
                              ElevatedButton(
                                onPressed: ()=>Navigator.pushReplacement(context,
@@ -130,7 +131,6 @@ class _HomeState extends State<Home> {
                                const Text('New',
                                  style: kHLStyle,
                                ),
-
                              ),
                              ElevatedButton(
                                onPressed: ()=>Navigator.pushReplacement(context,
@@ -143,14 +143,11 @@ class _HomeState extends State<Home> {
                                    primary: Colors.transparent,
                                    shadowColor: Colors.transparent,
                                    onSurface: Colors.transparent
-
                                ),
-
                                child:
                                const Text('Upcoming',
                                  style: kHLStyle,
                                ),
-
                              ),
                              ElevatedButton(
                                onPressed: ()=>Navigator.pushReplacement(context,
@@ -168,9 +165,7 @@ class _HomeState extends State<Home> {
                                const Text('Recommended',
                                  style: kHLStyle,
                                ),
-
                              ),
-
                            ],
                          ),
                        ),
@@ -178,7 +173,6 @@ class _HomeState extends State<Home> {
                      Container(
                        padding: const EdgeInsets.all(10),
                        height : 250,
-
                        child:ListView(
                          scrollDirection: Axis.horizontal,
                          children: [
@@ -254,7 +248,6 @@ class _HomeState extends State<Home> {
                                alignment: Alignment.bottomRight,
                                child: const Text('Multan',style: kIText,),
                                width: 200.0,
-
                                decoration: const BoxDecoration(
                                  image: DecorationImage(
                                      fit: BoxFit.cover,
@@ -299,13 +292,8 @@ class _HomeState extends State<Home> {
                   },
                  ),
                ),
-
-
                ],
-
-
              ),
-
            ),
            const Text('Upcoming Features',
            style: kLStyle,),
@@ -323,7 +311,6 @@ class _HomeState extends State<Home> {
                        child:Row(
                          // scrollDirection: Axis.horizontal,
                          children: [
-
                            InkWell(
                              child:  Container(
                                width: 100.0,
@@ -331,25 +318,20 @@ class _HomeState extends State<Home> {
                                  image: DecorationImage(
                                      fit: BoxFit.cover,
                                      image: NetworkImage("images/icons/hotels.jpg")),
-
                                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                  color: Colors.redAccent,
                                ),
                                //
                              ),
                              onTap: (){
-
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>const Faasil_Mosque(
-
-                                   ))
+                                   MaterialPageRoute(builder: (context)=>const hotel_HomePage())
                                );
                              },
                            ),
                            const SizedBox(
                              width: 10.0,
                            ),
-
                            InkWell(
                              child: Container(
                                width: 100.0,
@@ -362,23 +344,18 @@ class _HomeState extends State<Home> {
                                ),
                              ),
                              onTap: (){
-
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>const Monument(
-
-                                   ))
+                                   MaterialPageRoute(builder: (context)=>const Monument())
                                );
                              },
                            ),
                            const SizedBox(
                              width: 10.0,
                            ),
-
                            InkWell(
                              child:
                              Container(
                                width: 100.0,
-
                                decoration: const BoxDecoration(
                                  image: DecorationImage(
                                      fit: BoxFit.cover,
@@ -386,10 +363,8 @@ class _HomeState extends State<Home> {
                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                  color: Colors.redAccent,
                                ),
-
                              ),
                              onTap: (){
-
                                Navigator.push(context,
                                    MaterialPageRoute(builder: (context)=>Monal())
                                  );
@@ -398,11 +373,9 @@ class _HomeState extends State<Home> {
                            SizedBox(
                              width: 10.0,
                            ),
-
                            InkWell(
                              child: Container(
                                width: 100.0,
-
                                decoration: BoxDecoration(
                                  image: const DecorationImage(
                                      fit: BoxFit.cover,
@@ -412,11 +385,8 @@ class _HomeState extends State<Home> {
                                ),
                              ),
                              onTap: (){
-
                                Navigator.push(context,
-                                   MaterialPageRoute(builder: (context)=>Centours(
-
-                                   ))
+                                   MaterialPageRoute(builder: (context)=>Centours())
                                );
                              },
                            ),
@@ -429,7 +399,6 @@ class _HomeState extends State<Home> {
                    ],
                  ),
                ),
-
              ],
            )
          ],
@@ -442,7 +411,6 @@ class _HomeState extends State<Home> {
               bottomRight: Radius.circular(20)),
         ),
         child: ListView(
-
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
@@ -450,16 +418,13 @@ class _HomeState extends State<Home> {
               image: DecorationImage(
                   fit: BoxFit.fill,
                   image: NetworkImage("images/icons/travel&tourism.jpg")),
-
             ),
             child: Text('Travel and Tourism'),
-
           ),
           ListTile(
             title: Text('Home'),
             leading: Icon(Icons.home),
             onTap: (){
-
               Navigator.push(context,
                   MaterialPageRoute(builder: (context)=>Home())
               );
@@ -468,43 +433,36 @@ class _HomeState extends State<Home> {
           ListTile(
             title: Text('Queries'),
             leading: Icon(Icons.question_mark),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>About(
-            //
-            //       )));
-            // },
+            onTap: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>About())
+              );
+            },
           ),
           ListTile(
             title: Text('Contact Us'),
             leading: Icon(Icons.call),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>Contact(
-            //
-            //       )));
-            // },
+            onTap: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>Contact()
+                  )
+              );
+            },
           ),
           ListTile(
             title: Text('About us'),
             leading: Icon(Icons.person),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>About(
-            //
-            //       )));
-            // },
+            onTap: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>About())
+              );
+            },
           ),
         ],
       ),),
     );
-
   }
 }
-
 class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
