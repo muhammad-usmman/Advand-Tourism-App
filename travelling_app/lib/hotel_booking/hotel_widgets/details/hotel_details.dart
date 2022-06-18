@@ -68,7 +68,7 @@ AnimatedPadding buildHotelDetails(Map hotel, Color defaultColor,
                                   left: size.width * 0.015,
                                 ),
                                 child: Text(
-                                  "Katowice, Poland",
+                                  "Islamabad, Pakistan",
                                   style: GoogleFonts.lato(
                                     color: defaultColor,
                                     fontSize: size.height * 0.02,

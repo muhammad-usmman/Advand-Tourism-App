@@ -4,7 +4,7 @@ import 'package:travelling_app/Data/fasil_Mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
-import 'package:travelling_app/screens/Islamabad.dart';
+import 'package:travelling_app/screens/Peshawar.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
@@ -197,7 +197,7 @@ class _UpcomingState extends State<Upcoming> {
                                   ),
                                   onTap: (){
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Islamabad())
+                                        MaterialPageRoute(builder: (context)=>const peshawar())
                                     );
                                   },
                                 ),

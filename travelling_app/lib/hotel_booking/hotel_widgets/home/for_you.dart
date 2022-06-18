@@ -51,6 +51,7 @@ Column buildForYou(Color defaultColor, Size size) {
           ),
         ),
       ),
+
     ],
   );
 }

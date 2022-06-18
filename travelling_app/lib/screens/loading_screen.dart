@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/Data/badsahi_mosque.dart';
+import 'package:travelling_app/login/src/signin.dart';
 import 'dart:async';
 import 'package:travelling_app/screens/Islamabad.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
@@ -17,7 +18,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                Home()
+                SignInPage()
             )
         )
     );

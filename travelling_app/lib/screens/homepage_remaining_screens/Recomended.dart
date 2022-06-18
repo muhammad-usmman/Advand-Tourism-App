@@ -5,6 +5,8 @@ import 'package:travelling_app/Data/fasil_Mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
+import 'package:travelling_app/screens/Karachi.dart';
+import 'package:travelling_app/screens/Multan.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Upcoming.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
@@ -229,7 +231,7 @@ class _RecomendedState extends State<Recomended> {
                                   ),
                                   onTap: (){
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Monument())
+                                        MaterialPageRoute(builder: (context)=>const karachi())
                                     );
                                   },
                                 ),
@@ -274,7 +276,7 @@ class _RecomendedState extends State<Recomended> {
                                   ),
                                   onTap: (){
                                     Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Centours())
+                                        MaterialPageRoute(builder: (context)=>const multan())
                                     );
                                   },
                                 ),

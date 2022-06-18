@@ -5,14 +5,14 @@ import '../Dreawer/Contact.dart';
 import '../Dreawer/about.dart';
 
 
-class karachi extends StatefulWidget {
-  const karachi({Key? key}) : super(key: key);
+class peshawar extends StatefulWidget {
+  const peshawar({Key? key}) : super(key: key);
 
   @override
-  State<karachi> createState() => _karachiState();
+  State<peshawar> createState() => _peshawarState();
 }
 
-class _karachiState extends State<karachi> {
+class _peshawarState extends State<peshawar> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(

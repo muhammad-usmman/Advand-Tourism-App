@@ -5,7 +5,9 @@ import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/Islamabad.dart';
+import 'package:travelling_app/screens/Karachi.dart';
 import 'package:travelling_app/screens/Lahore.dart';
+import 'package:travelling_app/screens/Multan.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/New.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Recomended.dart';
 import 'package:travelling_app/screens/homepage_remaining_screens/Upcoming.dart';
@@ -213,7 +215,7 @@ class _HomeState extends State<Home> {
                                ),
                                onTap: (){
                                  Navigator.push(context,
-                                     MaterialPageRoute(builder: (context)=>const Monument())
+                                     MaterialPageRoute(builder: (context)=>const karachi())
                                  );
                                },
                              ),
@@ -257,7 +259,7 @@ class _HomeState extends State<Home> {
                                ),
                                onTap: (){
                                  Navigator.push(context,
-                                     MaterialPageRoute(builder: (context)=>const Centours())
+                                     MaterialPageRoute(builder: (context)=>const multan())
                                  );
                                },
                              ),

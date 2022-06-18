@@ -148,7 +148,8 @@ SizedBox buildHotel(
                 ),
               ),
             ],
-          )
+          ),
+
         ],
       ),
     ),
