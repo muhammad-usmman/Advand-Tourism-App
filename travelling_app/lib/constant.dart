@@ -41,7 +41,7 @@ const kHLStyle=TextStyle(
     color: Colors.black
 );
 const kLStyle=TextStyle(
-    fontSize: 25.0,
+    fontSize: 20.0,
     fontWeight: FontWeight.bold,
     fontFamily:'Poppins',
     color: Colors.black

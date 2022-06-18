@@ -10,7 +10,7 @@ Row buildTopBar(Color defaultColor, Size size) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Searching hotel in",
+            "Showing hotels in",
             style: GoogleFonts.poppins(
               color: defaultColor.withOpacity(0.4),
               fontSize: size.height * 0.017,
@@ -28,7 +28,7 @@ Row buildTopBar(Color defaultColor, Size size) {
                   left: size.width * 0.015,
                 ),
                 child: Text(
-                  "Katowice",
+                  "Islamabad",
                   style: GoogleFonts.lato(
                     color: defaultColor,
                     fontSize: size.height * 0.025,

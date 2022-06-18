@@ -17,7 +17,7 @@ class _hotel_HomePageState extends State<hotel_HomePage> {
     Size size = MediaQuery.of(context).size; //check the size of device
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isDarkMode = brightness ==
-        Brightness.dark; //check if device is in dark or light mode
+        Brightness.light; //check if device is in dark or light mode
     Color defaultColor = isDarkMode ? Colors.white : Colors.black;
     return Scaffold(
       extendBody: true,
