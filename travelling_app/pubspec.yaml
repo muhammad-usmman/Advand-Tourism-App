@@ -38,6 +38,7 @@ dependencies:
   unicons: ^2.0.2
   google_fonts: ^2.2.0
   carousel_slider: ^4.0.0
+  dropdown_button2: ^1.6.2
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +59,10 @@ flutter:
     - images/lahore/shahjhan.jpg
     - images/lahore/lahoreFort.jpg
     - images/lahore/Museum.jpg
+    - images/icons/camping_icon.jpg
+    - images/icons/cruise.jpg
+    - images/icons/hotels.jpg
+    - images/icons/road_trip.jpg
 
 
 

@@ -29,8 +29,7 @@ class Contact extends StatelessWidget {
             ),
           ),
         ),
-
-        backgroundColor:   Colors.teal,
+        backgroundColor: Colors.white,
         body: Container(
 
           color:   Colors.teal,
@@ -66,68 +65,56 @@ class Contact extends StatelessWidget {
                 topRight: Radius.circular(20),
                 bottomRight: Radius.circular(20)),
           ),
-
           child: ListView(
-
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage("images/icons/travel&tourism.jpg")),
-
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage("images/icons/travel&tourism.jpg")),
+                ),
+                child: Text(''),
               ),
-              child: Text('Travel and Tourism'),
-
-            ),
-            ListTile(
-              title: Text('Home'),
-              leading: Icon(Icons.home),
-              onTap: (){
-
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=>Home(
-
-                    )));
-              },
-            ),
-
-
-
-
-            ListTile(
-              title: Text('Queries'),
-              leading: Icon(Icons.question_mark),
-              onTap: (){
-
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=>Contact()
-                    ));
-              },
-            ),
-            ListTile(
-              title: Text('Contact Us'),
-              leading: Icon(Icons.call),
-              onTap: (){
-
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=>Contact()
-                    ));
-              },
-            ),
-            ListTile(
-              title: Text('About us'),
-              leading: Icon(Icons.backup),
-              onTap: (){
-
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=>About()
-                    ));
-              },
-            ),
-          ],
-        ),),
+              ListTile(
+                title: Text('Home'),
+                leading: Icon(Icons.home),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Home())
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Queries'),
+                leading: Icon(Icons.question_mark),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>About())
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Contact Us'),
+                leading: Icon(Icons.call),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>Contact()
+                      )
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('About us'),
+                leading: Icon(Icons.person),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>About())
+                  );
+                },
+              ),
+            ],
+          ),),
       ),
     );
   }

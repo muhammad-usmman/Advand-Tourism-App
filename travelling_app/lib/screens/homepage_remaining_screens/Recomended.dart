@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
-import 'package:travelling_app/Data/fasil_Mosque.dart';
-import 'package:travelling_app/Data/centours.dart';
 import 'package:travelling_app/Data/monal.dart';
 import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/Karachi.dart';
@@ -14,6 +12,11 @@ import 'package:travelling_app/screens/Home_Page.dart';
 import 'package:travelling_app/screens/Islamabad.dart';
 import 'dart:math';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
+
+import '../../Booking/rdt_booking.dart';
+import '../../Dreawer/Contact.dart';
+import '../../Dreawer/about.dart';
+import '../../hotel_booking/hotel_pages/hotel_home_page.dart';
 
 class Recomended extends StatefulWidget {
   const Recomended({Key? key}) : super(key: key);
@@ -52,6 +55,12 @@ class _RecomendedState extends State<Recomended> {
         child: AppBar(
           iconTheme:const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios_new),
+          ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -71,383 +80,373 @@ class _RecomendedState extends State<Recomended> {
         ),
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Expanded(
-              child: Text("Let's enjoy \n your vacation!! ",
-                style: kLStyle,),
-            ),
-            Expanded(
-              flex: 7,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: SearchBar<Post>(
-                      minimumChars: 1,
-                      searchBarPadding: const EdgeInsets.symmetric(horizontal: 10),
-                      headerPadding: const EdgeInsets.symmetric(horizontal: 10),
-                      listPadding: const EdgeInsets.symmetric(horizontal: 10),
-                      onSearch: _getALlPosts,
-                      searchBarController: _searchBarController,
-                      placeHolder:
-                      Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Row(
-                              children: [
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                        Home(),
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  Text('All',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                        New(),
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  Text('New',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                        Upcoming(),
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  Text('Upcoming',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-                                ElevatedButton(
-                                  onPressed: ()=>Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder:
-                                        (context) =>
-                                            Recomended(),
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.transparent,
-                                      shadowColor: Colors.transparent,
-                                      onSurface: Colors.transparent
-
-                                  ),
-
-                                  child:
-                                  Text('Recomended',
-                                    style: kHLStyle,
-                                  ),
-
-                                ),
-
-                              ],
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height : 250,
-
-                            child:ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Islamabad',style: kIText,),
-                                    width: 200.0,
-                                    decoration:const BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/Islamabad/fasilmosque.jpg")
-                                      ),
-                                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Islamabad())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Karachi',style: kIText,),
-                                    width: 200.0,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/quaidTomb.jpg")),
-                                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const karachi())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Lahore',style: kIText,),
-                                    width: 200.0,
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/Badshahi.jpg")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const Monal())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                InkWell(
-                                  child: Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: const Text('Multan',style: kIText,),
-                                    width: 200.0,
-
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage("images/Multan_Tomb.jpg")),
-                                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                      color: Colors.redAccent,
-                                    ),
-                                  ),
-                                  onTap: (){
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context)=>const multan())
-                                    );
-                                  },
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      cancellationWidget: Text("Cancel"),
-                      emptyWidget: Text("empty"),
-                      onCancelled: () {
-                        print("Cancelled triggered");
-                      },
-                      mainAxisSpacing: 10,
-                      onItemFound: (Post post, int index) {
-                        return Container(
-                          color: Colors.lightBlue,
-                          child: ListTile(
-                            title: Text(post.title),
-                            isThreeLine: true,
-                            subtitle: Text(post.body),
-                            onTap: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) => Detail()));
-                            },
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-
-
-                ],
-
-
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          height: 650.0,
+          width: 500.0,
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Expanded(
+                child: Text("Let's enjoy \n your vacation!! ",
+                  style: kLStyle,),
               ),
-
-            ),
-            Text('Upcoming Features',
-              style: kLStyle,),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Row(
-
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        height : 100,
-
-                        child:Row(
-                          // scrollDirection: Axis.horizontal,
+              Expanded(
+                flex: 7,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: SearchBar<Post>(
+                        minimumChars: 1,
+                        searchBarPadding: const EdgeInsets.symmetric(horizontal: 10),
+                        headerPadding: const EdgeInsets.symmetric(horizontal: 10),
+                        listPadding: const EdgeInsets.symmetric(horizontal: 10),
+                        onSearch: _getALlPosts,
+                        searchBarController: _searchBarController,
+                        placeHolder:
+                        Column(
                           children: [
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                          Home(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
 
-                            InkWell(
-                              child:  Container(
-                                width: 100.0,
-                                decoration:const BoxDecoration(
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage("images/icons/hotels.jpg")),
+                                    ),
 
-                                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                                  color: Colors.redAccent,
-                                ),
-                                // child:
-                                // const Text('Hotels',style: kLStyle,),
+                                    child:
+                                    Text('All',
+                                      style: kHLStyle,
+                                    ),
+
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                          New(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+
+                                    ),
+
+                                    child:
+                                    Text('New',
+                                      style: kHLStyle,
+                                    ),
+
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                          Upcoming(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+
+                                    ),
+
+                                    child:
+                                    Text('Upcoming',
+                                      style: kHLStyle,
+                                    ),
+
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: ()=>Navigator.pushReplacement(context,
+                                      MaterialPageRoute(builder:
+                                          (context) =>
+                                              Recomended(),
+                                      ),
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Colors.transparent,
+                                        shadowColor: Colors.transparent,
+                                        onSurface: Colors.transparent
+
+                                    ),
+
+                                    child:
+                                    Text('Recomended',
+                                      style: kHLStyle,
+                                    ),
+
+                                  ),
+
+                                ],
                               ),
-                              onTap: (){
-
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>const Faasil_Mosque(
-
-                                    ))
-                                );
-                              },
                             ),
-                            const SizedBox(
-                              width: 10.0,
-                            ),
+                            Container(
+                              padding: const EdgeInsets.all(5),
+                              height : 250,
 
-                            InkWell(
-                              child: Container(
-                                width: 100.0,
-                                decoration: const BoxDecoration(
-                                  image:  DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage("images/icons/camping_icon.jpg")),
-                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                  color: Colors.redAccent,
-                                ),
+                              child:ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  InkWell(
+                                    child: Container(
+                                      alignment: Alignment.bottomRight,
+                                      child: const Text('Islamabad',style: kIText,),
+                                      width: 200.0,
+                                      decoration:const BoxDecoration(
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image:AssetImage("images/Islamabad/fasilmosque.jpg")
+                                        ),
+                                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context)=>const Islamabad())
+                                      );
+                                    },
+                                  ),
+                                  sizedb10,
+                                  InkWell(
+                                    child: Container(
+                                      alignment: Alignment.bottomRight,
+                                      child: const Text('Karachi',style: kIText,),
+                                      width: 200.0,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: AssetImage("images/quaidTomb.jpg")),
+                                        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context)=>const karachi())
+                                      );
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  InkWell(
+                                    child: Container(
+                                      alignment: Alignment.bottomRight,
+                                      child: const Text('Lahore',style: kIText,),
+                                      width: 200.0,
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: AssetImage("images/Badshahi.jpg")),
+                                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context)=>const Monal())
+                                      );
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  InkWell(
+                                    child: Container(
+                                      alignment: Alignment.bottomRight,
+                                      child: const Text('Multan',style: kIText,),
+                                      width: 200.0,
+
+                                      decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image:AssetImage("images/Multan_Tomb.jpg")),
+                                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                        color: Colors.redAccent,
+                                      ),
+                                    ),
+                                    onTap: (){
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context)=>const multan())
+                                      );
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                ],
                               ),
-                              onTap: (){
-
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>const Monument(
-
-                                    ))
-                                );
-                              },
-                            ),
-                            const SizedBox(
-                              width: 10.0,
-                            ),
-
-                            InkWell(
-                              child:
-                              Container(
-                                width: 100.0,
-
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage("images/icons/cruise.jpg")),
-                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                  color: Colors.redAccent,
-                                ),
-                                // child:
-                                // // Text('Cruise')
-                              ),
-                              onTap: (){
-
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>Monal()
-                                    )
-                                );
-
-                              },
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-
-                            InkWell(
-                              child: Container(
-                                width: 100.0,
-
-                                decoration: BoxDecoration(
-                                  image: const DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage("images/icons/road_trip.jpg")),
-                                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                                  color: Colors.redAccent,
-                                ),
-                              ),
-                              onTap: (){
-
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context)=>Centours(
-
-                                    ))
-                                );
-                              },
-                            ),
-                            SizedBox(
-                              width: 10.0,
                             ),
                           ],
                         ),
+                        cancellationWidget: Text("Cancel"),
+                        emptyWidget: Text("empty"),
+                        onCancelled: () {
+                          print("Cancelled triggered");
+                        },
+                        mainAxisSpacing: 10,
+                        onItemFound: (Post post, int index) {
+                          return Container(
+                            color: Colors.lightBlue,
+                            child: ListTile(
+                              title: Text(post.title),
+                              isThreeLine: true,
+                              subtitle: Text(post.body),
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) => Detail()));
+                              },
+                            ),
+                          );
+                        },
                       ),
-                    ],
-                  ),
+                    ),
+
+
+                  ],
+
+
                 ),
 
-              ],
-            )
-          ],
+              ),
+              Text('Our Services',
+                style: kLStyle,),
+              Column(
+                children: [
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          height : 150,
+                          child:Row(
+                            // scrollDirection: Axis.horizontal,
+                            children: [
+                              InkWell(
+                                child:  Container(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const Text('Hotels',style: kIText,),
+                                  width: 150.0,
+                                  decoration:const BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:AssetImage('images/icons/hotels.jpg',),
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                    color: Colors.redAccent,
+                                  ),
+                                  //
+                                ),
+                                onTap: (){
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context)=>const hotel_HomePage())
+                                  );
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const Text('Camping',style: kIText,),
+                                  width: 150.0,
+                                  decoration: const BoxDecoration(
+                                    image:  DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:AssetImage('images/icons/camping_icon.jpg',),
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                    color: Colors.redAccent,
+                                  ),
+                                ),
+                                onTap: (){
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context)=>const Monument())
+                                  );
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10.0,
+                              ),
+                              InkWell(
+                                child:
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const Text('Cruise',style: kIText,),
+                                  width: 150.0,
+                                  decoration: const BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:AssetImage('images/icons/cruise.jpg',),
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                    color: Colors.redAccent,
+                                  ),
+                                ),
+                                onTap: (){
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context)=>Monal())
+                                  );
+                                },
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const Text('Road Trip',style: kIText,),
+                                  width: 150.0,
+                                  decoration:const BoxDecoration(
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image:AssetImage('images/icons/road_trip.jpg',)
+                                    ),
+                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                                    color: Colors.redAccent,
+                                  ),
+                                ),
+                                onTap: (){
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context)=>rdt_Book())
+                                  );
+                                },
+                              ),
+                              SizedBox(
+                                width: 10.0,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
       endDrawer: Drawer(
@@ -457,65 +456,55 @@ class _RecomendedState extends State<Recomended> {
               bottomRight: Radius.circular(20)),
         ),
         child: ListView(
-
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage("images/icons/travel&tourism.jpg")),
-
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage("images/icons/travel&tourism.jpg")),
+              ),
+              child: Text(''),
             ),
-            child: Text('Travel and Tourism'),
-
-          ),
-          ListTile(
-            title: Text('Home'),
-            leading: Icon(Icons.home),
-            onTap: (){
-
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>Recomended(
-
-                  )));
-            },
-          ),
-          ListTile(
-            title: Text('Queries'),
-            leading: Icon(Icons.question_mark),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>About(
-            //
-            //       )));
-            // },
-          ),
-          ListTile(
-            title: Text('Contact Us'),
-            leading: Icon(Icons.call),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>Contact(
-            //
-            //       )));
-            // },
-          ),
-          ListTile(
-            title: Text('About us'),
-            leading: Icon(Icons.person),
-            // onTap: (){
-            //
-            //   Navigator.push(context,
-            //       MaterialPageRoute(builder: (context)=>About(
-            //
-            //       )));
-            // },
-          ),
-        ],
-      ),),
+            ListTile(
+              title: Text('Home'),
+              leading: Icon(Icons.home),
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>Home())
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Queries'),
+              leading: Icon(Icons.question_mark),
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>About())
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Contact Us'),
+              leading: Icon(Icons.call),
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>Contact()
+                    )
+                );
+              },
+            ),
+            ListTile(
+              title: Text('About us'),
+              leading: Icon(Icons.person),
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context)=>About())
+                );
+              },
+            ),
+          ],
+        ),),
     );
 
   }

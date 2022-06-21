@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelling_app/Booking/rdt_booking.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:travelling_app/hotel_booking/hotel_pages/hotel_home_page.dart';
 import 'package:travelling_app/Data/centours.dart';
@@ -51,6 +52,7 @@ class _HomeState extends State<Home> {
         child: AppBar(
           iconTheme:const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
+
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -59,7 +61,9 @@ class _HomeState extends State<Home> {
                 fit: BoxFit.contain,
                 height: 50,
                 width: 50,
+
               ),
+
             ],
           ),
         ),
@@ -68,8 +72,8 @@ class _HomeState extends State<Home> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: 750,
-          width: 500,
+          height: 650.0,
+          width: 500.0,
           padding: const EdgeInsets.all(10),
          child: Column(
            mainAxisAlignment: MainAxisAlignment.start,
@@ -185,7 +189,7 @@ class _HomeState extends State<Home> {
                                  decoration:const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/Islamabad/fasilmosque.jpg")
+                                     image:AssetImage('images/Islamabad/fasilmosque.jpg',),
                                    ),
                                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                    color: Colors.redAccent,
@@ -198,7 +202,7 @@ class _HomeState extends State<Home> {
                                },
                              ),
                              const SizedBox(
-                               width: 10.0,
+                               width: 20.0,
                              ),
                              InkWell(
                                child: Container(
@@ -208,7 +212,7 @@ class _HomeState extends State<Home> {
                                  decoration:const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/quaidTomb.jpg")),
+                                   image:AssetImage('images/quaidTomb.jpg',)),
                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                    color: Colors.redAccent,
                                  ),
@@ -220,7 +224,7 @@ class _HomeState extends State<Home> {
                                },
                              ),
                              const SizedBox(
-                               width: 10.0,
+                               width: 20.0,
                              ),
                              InkWell(
                                child: Container(
@@ -230,7 +234,8 @@ class _HomeState extends State<Home> {
                                  decoration: const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/Badshahi.jpg")),
+                                     image:AssetImage('images/Badshahi.jpg',),
+                                   ),
                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                    color: Colors.redAccent,
                                  ),
@@ -252,7 +257,8 @@ class _HomeState extends State<Home> {
                                  decoration: const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/Multan_Tomb.jpg")),
+                                     image:AssetImage('images/Multan_Tomb.jpg',),
+                                   ),
                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                    color: Colors.redAccent,
                                  ),
@@ -263,9 +269,9 @@ class _HomeState extends State<Home> {
                                  );
                                },
                              ),
-                             const SizedBox(
-                               width: 10.0,
-                             ),
+                             // const SizedBox(
+                             //   width: 10.0,
+                             // ),
                            ],
                          ),
                        ),
@@ -296,7 +302,7 @@ class _HomeState extends State<Home> {
                  ],
                ),
              ),
-             const Text('Other Services',
+             const Text('Our Services',
              style: kLStyle,),
              Column(
                children: [
@@ -318,7 +324,8 @@ class _HomeState extends State<Home> {
                                  decoration:const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/icons/hotels.jpg")),
+                                     image:AssetImage('images/icons/hotels.jpg',),
+                                   ),
                                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                    color: Colors.redAccent,
                                  ),
@@ -341,7 +348,8 @@ class _HomeState extends State<Home> {
                                  decoration: const BoxDecoration(
                                    image:  DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/icons/camping_icon.jpg")),
+                                     image:AssetImage('images/icons/camping_icon.jpg',),
+                                   ),
                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                    color: Colors.redAccent,
                                  ),
@@ -364,7 +372,8 @@ class _HomeState extends State<Home> {
                                  decoration: const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/icons/cruise.jpg")),
+                                     image:AssetImage('images/icons/cruise.jpg',),
+                                   ),
                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                    color: Colors.redAccent,
                                  ),
@@ -386,14 +395,15 @@ class _HomeState extends State<Home> {
                                  decoration:const BoxDecoration(
                                    image: DecorationImage(
                                        fit: BoxFit.cover,
-                                       image: NetworkImage("images/icons/road_trip.jpg")),
+                                     image:AssetImage('images/icons/road_trip.jpg',)
+                                   ),
                                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
                                    color: Colors.redAccent,
                                  ),
                                ),
                                onTap: (){
                                  Navigator.push(context,
-                                     MaterialPageRoute(builder: (context)=>Centours())
+                                     MaterialPageRoute(builder: (context)=>rdt_Book())
                                  );
                                },
                              ),
@@ -425,9 +435,9 @@ class _HomeState extends State<Home> {
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage("images/icons/travel&tourism.jpg")),
+                  image: AssetImage("images/icons/travel&tourism.jpg")),
             ),
-            child: Text('Travel and Tourism'),
+            child: Text(''),
           ),
           ListTile(
             title: Text('Home'),

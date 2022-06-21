@@ -114,7 +114,7 @@ AnimatedPadding buildHotelDetails(Map hotel, Color defaultColor,
                       child: Text(
                         //TODO: change description
                         //! EXAMPLE DESCRIPTION
-                        "Example Description\nI’m a Flutter Developer from Poland.\nI'm 15 years old (March 2006) and open for a project or remote part-time (because of school) job. \nCurrently, I'm focused on UI Development, so if you need a Flutter UI Developer - just DM me details (LinkedIn: Martin Gogolowicz)\n I also know Firebase functions (database integration etc.) - more details on \"Experience\" section -> \"Flutter Developer\" description.\nMy open-source projects you can find at GitHub: MonsieurZbanowanYY or at the \"Projects\" section inside \"Accomplishments\" (LinkedIn - Martin Gogolowicz)",
+                        "Example Description\n\nLorem ipsum dolor sit amet,\n consectetur adipiscing elit,\n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\n ut aliquip ex ea commodo consequat.\n Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n Excepteur sint occaecat cupidatat non proident,\n sunt in culpa qui officia deserunt mollit anim id est laborum.\n",
                         style: GoogleFonts.poppins(
                           color: defaultColor.withOpacity(0.9),
                           fontSize: size.height * 0.018,

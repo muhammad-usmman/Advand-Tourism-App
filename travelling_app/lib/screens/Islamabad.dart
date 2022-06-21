@@ -70,7 +70,7 @@ class _IslamabadState extends State<Islamabad> {
                             decoration:const BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/Islamabad/fasilmosque.jpg")),
+                                  image:AssetImage("images/Islamabad/fasilmosque.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -93,7 +93,7 @@ class _IslamabadState extends State<Islamabad> {
                             decoration:const  BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/Islamabad/monument.jpg")),
+                                  image: AssetImage("images/Islamabad/monument.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -117,7 +117,7 @@ class _IslamabadState extends State<Islamabad> {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/Islamabad/monal.jpg")),
+                                  image: AssetImage("images/Islamabad/monal.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -141,7 +141,7 @@ class _IslamabadState extends State<Islamabad> {
                             decoration: const  BoxDecoration(
                               image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: NetworkImage("images/Islamabad/centours.jpg")),
+                                  image:AssetImage("images/Islamabad/centours.jpg")),
                               borderRadius: BorderRadius.all(Radius.circular(8.0)),
                               color: Colors.redAccent,
                             ),
@@ -193,7 +193,7 @@ class _IslamabadState extends State<Islamabad> {
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage("images/icons/travel&tourism.jpg")),
+                  image:AssetImage("images/icons/travel&tourism.jpg")),
 
             ),
             child: Text('Travel and Tourism'),

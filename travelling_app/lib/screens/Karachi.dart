@@ -61,7 +61,7 @@ class _karachiState extends State<karachi> {
                           decoration:const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("")),//TODO: ADD NAME AND IMAGES
+                                image: AssetImage("")),//TODO: ADD NAME AND IMAGES
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
