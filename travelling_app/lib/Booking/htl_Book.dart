@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -11,13 +12,13 @@ class htl_Book extends StatefulWidget {
 
 class _htl_BookState extends State<htl_Book> {
   final formkey = GlobalKey<FormState>();
-  TextEditingController name = TextEditingController();
-  TextEditingController cnic = TextEditingController();
-  TextEditingController mail = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController address = TextEditingController();
-  TextEditingController strtaddress = TextEditingController();
-  TextEditingController destination = TextEditingController();
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController cniccontroller = TextEditingController();
+  TextEditingController mailcontroller = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
+  TextEditingController creditcontroller = TextEditingController();
+  TextEditingController agecontroller = TextEditingController();
+  TextEditingController destinationcontroller = TextEditingController();
 
   final List<String> items = [
     "Single Bed      Rs  4000/day ",
@@ -60,7 +61,7 @@ class _htl_BookState extends State<htl_Book> {
                     ),
                     labelText: 'Name',
                   ),
-                  controller: name,
+                  controller: namecontroller,
                   keyboardType: TextInputType.name,
                   validator: (value){
                     if(value!.isEmpty){
@@ -84,7 +85,7 @@ class _htl_BookState extends State<htl_Book> {
                     labelText: 'CNIC',
                     helperText: 'XXXXX-XXXXXXX-X',
                   ),
-                  controller: cnic,
+                  controller: cniccontroller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -107,7 +108,7 @@ class _htl_BookState extends State<htl_Book> {
                     labelText: 'E-Mail Id',
                     helperText: 'example@domain.com',
                   ),
-                  controller: mail,
+                  controller: mailcontroller,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -128,7 +129,7 @@ class _htl_BookState extends State<htl_Book> {
                       labelText: 'Phone No.',
                       helperText: 'XXXX-XXXXXXX'
                   ),
-                  controller: phone,
+                  controller: phonecontroller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -150,7 +151,7 @@ class _htl_BookState extends State<htl_Book> {
                     ),
                     labelText: 'Credit Card Number',
                   ),
-                  controller: address,
+                  controller: creditcontroller,
                   keyboardType: TextInputType.streetAddress,
 
                   validator: (value){
@@ -176,7 +177,7 @@ class _htl_BookState extends State<htl_Book> {
                     labelText: 'Age',
 
                   ),
-                  controller: strtaddress,
+                  controller: agecontroller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -286,22 +287,28 @@ class _htl_BookState extends State<htl_Book> {
                 ElevatedButton(
                     onPressed: () {
                       if(formkey.currentState!.validate()){
-                        final snackBar = SnackBar(
-                          content: Text('Class booked successfully.'),
-                          behavior: SnackBarBehavior.floating,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)
-                          ),
+                        // final snackBar = SnackBar(
+                        //   content: Text('Class booked successfully.'),
+                        //   behavior: SnackBarBehavior.floating,
+                        //   shape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(10)
+                        //   ),
+                        // );
+                        // _scaffoldKey.currentState!.showSnackBar(snackBar);
+                        FirebaseFirestore.instance.collection("Hotel Booking").add({
+                          'Name':'${namecontroller.text}',
+                          'CNIC':'${cniccontroller.text}',
+                          'E-mail id':'${mailcontroller.text}',
+                          'Contact':'${phonecontroller.text}',
+                          'Address':'${creditcontroller.text}',
+                          'Age':'${agecontroller.text}',
+                          'Address':'${destinationcontroller.text}',
+
+                        }
                         );
-                        _scaffoldKey.currentState!.showSnackBar(snackBar);
+                        Navigator.pop(context);
                       }
-                      name.clear();
-                      cnic.clear();
-                      mail.clear();
-                      phone.clear();
-                      address.clear();
-                      strtaddress.clear();
-                      destination.clear();
+
                     },
                     child: Text('Book Camp',)
                 ),

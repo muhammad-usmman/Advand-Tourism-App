@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:travelling_app/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -11,13 +12,13 @@ class rdt_Book extends StatefulWidget {
 
 class _rdt_BookState extends State<rdt_Book> {
   final formkey = GlobalKey<FormState>();
-  TextEditingController name = TextEditingController();
-  TextEditingController cnic = TextEditingController();
-  TextEditingController mail = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController address = TextEditingController();
-  TextEditingController strtaddress = TextEditingController();
-  TextEditingController destination = TextEditingController();
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController cniccontroller = TextEditingController();
+  TextEditingController mailcontroller = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
+  TextEditingController addresscontroller = TextEditingController();
+  TextEditingController strtaddresscontroller = TextEditingController();
+  TextEditingController destinationcontroller = TextEditingController();
 
   final List<String> items = [
     "Toyota Vitz      Rs  4000/day ",
@@ -61,7 +62,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     ),
                     labelText: 'Name',
                   ),
-                  controller: name,
+                  controller: namecontroller,
                   keyboardType: TextInputType.name,
                   validator: (value){
                     if(value!.isEmpty){
@@ -85,7 +86,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     labelText: 'CNIC',
                     helperText: 'XXXXX-XXXXXXX-X',
                   ),
-                  controller: cnic,
+                  controller: cniccontroller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -108,7 +109,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     labelText: 'E-Mail Id',
                     helperText: 'example@domain.com',
                   ),
-                  controller: mail,
+                  controller: mailcontroller,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -129,7 +130,7 @@ class _rdt_BookState extends State<rdt_Book> {
                       labelText: 'Phone No.',
                       helperText: 'XXXX-XXXXXXX'
                   ),
-                  controller: phone,
+                  controller: phonecontroller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -151,7 +152,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     ),
                     labelText: 'Address',
                   ),
-                  controller: address,
+                  controller: addresscontroller,
                   keyboardType: TextInputType.streetAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -172,7 +173,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     labelText: 'Starting Location',
 
                   ),
-                  controller: strtaddress,
+                  controller: strtaddresscontroller,
                   keyboardType: TextInputType.streetAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -191,7 +192,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     ),
                     labelText: 'Destination',
                   ),
-                  controller: destination,
+                  controller: destinationcontroller,
                   keyboardType: TextInputType.streetAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -282,22 +283,34 @@ class _rdt_BookState extends State<rdt_Book> {
                 ElevatedButton(
                     onPressed: () {
                       if(formkey.currentState!.validate()){
-                        final snackBar = SnackBar(
-                          content: Text('Class booked successfully.'),
-                          behavior: SnackBarBehavior.floating,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                        );
-                        _scaffoldKey.currentState!.showSnackBar(snackBar);
-                      }
-                      name.clear();
-                      cnic.clear();
-                      mail.clear();
-                      phone.clear();
-                      address.clear();
-                      strtaddress.clear();
-                      destination.clear();
+                      // final snackBar = SnackBar(
+                      //   content: Text('Class booked successfully.'),
+                      //   behavior: SnackBarBehavior.floating,
+                      //   shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(10)
+                      //   ),
+                      // );
+                      // _scaffoldKey.currentState!.showSnackBar(snackBar);
+                      FirebaseFirestore.instance.collection("Road Trip Booking").add({
+                        'Name':'${namecontroller.text}',
+                        'CNIC':'${cniccontroller.text}',
+                        'E-mail id':'${mailcontroller.text}',
+                        'Contact':'${phonecontroller.text}',
+                        'Address':'${addresscontroller.text}',
+                        'Starting Location':'${strtaddresscontroller.text}',
+                        'Destination':'${destinationcontroller.text}',
+
+                         }
+                      );
+                      Navigator.pop(context);
+                    }
+                      // namecontroller.clear();
+                      // cniccontroller.clear();
+                      // mailcontroller.clear();
+                      // phonecontroller.clear();
+                      // addresscontroller.clear();
+                      // strtaddresscontroller.clear();
+                      // destinationcontroller.clear();
                     },
                     child: Text('Book Road Trip',)
                 ),

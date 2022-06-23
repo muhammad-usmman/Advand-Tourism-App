@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'package:travelling_app/constant.dart';
 // import 'package:travelling_app/Data/badsahi_mosque.dart';
 import 'package:travelling_app/Data/centours.dart';
@@ -42,7 +43,7 @@ class _LahoreState extends State<Lahore> {
                 width: 50,
               ),
               Container(
-                  padding: const EdgeInsets.all(8.0), child:const  Text('Islamabad'))
+                  padding: const EdgeInsets.all(8.0), child:const  Text('Lahore'))
             ],
           ),
         ),
@@ -65,19 +66,19 @@ class _LahoreState extends State<Lahore> {
                       InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('Fasil Mosque',style: kIText,),
+                          child: const Text('Badshahi Mosque',style: kIText,),
                           width: 500.0,
                           decoration:const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image:AssetImage("images/Islamabad/fasilmosque.jpg")),
+                                image:AssetImage("images/Badshahi.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
                         onTap: (){
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
+                              MaterialPageRoute(builder: (context)=>const Badshahi())
                           );
                         },
                       ),
@@ -166,7 +167,8 @@ class _LahoreState extends State<Lahore> {
                   child: Expanded(
                     child: Column(
                       children:const  [
-                        Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
+                        Text('    Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer vehicula erat vel massa hendrerit, ac bibendum nunc porttitor.\n'
+                            ' Integer nec iaculis diam. Vestibulum sed nibh non est bibendum mollis.\n',
                           style: kBodyTextStyle,
                         ),
                       ],

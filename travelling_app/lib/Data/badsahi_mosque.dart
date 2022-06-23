@@ -6,11 +6,7 @@ import '../Dreawer/Contact.dart';
 import '../Dreawer/about.dart';
 import '../screens/Home_Page.dart';
 
-enum Gender{
-  male,
-  female,
-  other,
-}
+
 class Badshahi extends StatefulWidget {
   const Badshahi({Key? key}) : super(key: key);
 
@@ -19,25 +15,16 @@ class Badshahi extends StatefulWidget {
 }
 
 class _BadshahiState extends State<Badshahi> {
-  Gender selectGender=Gender.other;
+  Color _favIconColor = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         toolbarHeight: 60.0,
-        title: TextField(
-          cursorColor: Colors.white,
-          decoration: InputDecoration(
-              hintText: " Search...",
-              border: InputBorder.none,
-              suffixIcon: IconButton(
-                icon: Icon(Icons.search),
-                color: Color.fromRGBO(93, 25, 72, 1),
-                onPressed: () {},
-              )),
-          style: TextStyle(color: Colors.white, fontSize: 15.0),
-        ),
+        elevation: 0,
+
       ),
     body:Container(
     constraints: BoxConstraints.expand(),
@@ -59,12 +46,14 @@ class _BadshahiState extends State<Badshahi> {
               height: 20,
             ),
             Text(
-              "The Badshahi Mosque is a Mughal-era congregational \n"
-                  "mosque in Lahore, capital of the Pakistani province\n "
-                  "of Punjab, Pakistan. The mosque is located west of \n"
-                  " Lahore Fort along the outskirts of the Walled City \n "
-                  "of Lahore, and is widely considered to be one of Lahore's \n"
-                  " most iconic landmarks.",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+                  " Integer vehicula erat vel massa hendrerit, ac bibendum nunc porttitor.\n"
+                  " Integer nec iaculis diam.\n"
+                  " Vestibulum sed nibh non est bibendum mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+                  " Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n"
+                  " Cras consequat auctor tortor, nec convallis orci accumsan in.\n"
+                  " Vestibulum fermentum luctus scelerisque.\n"
+                  " Morbi pellentesque elementum dui, et rhoncus quam interdum vitae.\n",
               style: kImageText,
             ),
             Padding(
@@ -73,19 +62,27 @@ class _BadshahiState extends State<Badshahi> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  RepeatContainerCode(
-                    onPressed: (){
-                      setState(() {
-                        selectGender=Gender.male;
-                      });
-                    },
-                    colors: selectGender==Gender.male
-                        ? activecolor
-                        :deactivecolor,
-                    cardwidget: RepeatTextAndIconWidget(
-                      iconData: FontAwesomeIcons.heart,
-                      label:'Like',
+                  IconButton(
+                    icon: Icon(
+                      FontAwesomeIcons.heart,
+
                     ),
+
+                    color: _favIconColor,
+                    tooltip: 'Add to favorite',
+
+                    onPressed: () {
+                      setState(() {
+                        if(_favIconColor == Colors.grey){
+                          _favIconColor = Colors.red;
+                        }
+                        else{
+                          _favIconColor = Colors.grey;
+                        }
+                      }
+                      );
+                    },
+
                   ),
 
                 ],
@@ -94,7 +91,7 @@ class _BadshahiState extends State<Badshahi> {
           ],
         ),
       // ),
-      
+
     ),
       drawer: Drawer(
         shape: const RoundedRectangleBorder(
@@ -169,53 +166,4 @@ class _BadshahiState extends State<Badshahi> {
 }
 
 
-class RepeatTextAndIconWidget extends StatelessWidget {
-  RepeatTextAndIconWidget({ required this.iconData, required this.label});
 
-  final IconData iconData;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          iconData,
-          size: 55.0,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          label,
-          style: kHTextStyle,
-        )
-
-      ],
-
-    );
-  }
-}
-
-  class RepeatContainerCode extends StatelessWidget {
-  RepeatContainerCode({this.colors,this.cardwidget,this.onPressed});
-  final Color? colors;
-  final Widget? cardwidget;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-  return GestureDetector(
-  onTap: onPressed,
-  child: Container(
-  margin: EdgeInsets.all(15.0),
-  child: cardwidget,
-  decoration: BoxDecoration(
-  color: colors,
-  borderRadius: BorderRadius.circular(10.0)
-  ),
-  ),
-  );
-  }
-  }

@@ -292,12 +292,12 @@ class _Camp_BookState extends State<Camp_Book> {
                         // );
                         // _scaffoldKey.currentState!.showSnackBar(snackBar);
                         FirebaseFirestore.instance.collection("Camp_Booking").add({
-                          'name':'${namecontroller.text}',
-                          'cnic':'${cniccontrller.text}',
-                          'e-mail id':'${mailcontroller.text}',
-                          'contact':'${phonecontroller.text}',
-                          'address':'${addresscontroller.text}',
-                          'age':'${agecontroller.text}'
+                          'Name':'${namecontroller.text}',
+                          'CNIC':'${cniccontrller.text}',
+                          'E-mail id':'${mailcontroller.text}',
+                          'Contact':'${phonecontroller.text}',
+                          'Address':'${addresscontroller.text}',
+                          'Age':'${agecontroller.text}'
                             }
                             );
                         Navigator.pop(context);
