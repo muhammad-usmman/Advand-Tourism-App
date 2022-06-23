@@ -2,14 +2,14 @@ import 'package:travelling_app/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-class rdt_Book extends StatefulWidget {
-  const rdt_Book({Key? key}) : super(key: key);
+class htl_Book extends StatefulWidget {
+  const htl_Book({Key? key}) : super(key: key);
 
   @override
-  State<rdt_Book> createState() => _rdt_BookState();
+  State<htl_Book> createState() => _htl_BookState();
 }
 
-class _rdt_BookState extends State<rdt_Book> {
+class _htl_BookState extends State<htl_Book> {
   final formkey = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
   TextEditingController cnic = TextEditingController();
@@ -20,11 +20,10 @@ class _rdt_BookState extends State<rdt_Book> {
   TextEditingController destination = TextEditingController();
 
   final List<String> items = [
-    "Toyota Vitz      Rs  4000/day ",
-    'Toyota Yaris     Rs  6000/day ',
-    'Toyota Hi-Roof   Rs 10000/day',
-    'Toyota Pickup    Rs  8000/day',
-    'Daewoo Bus       Rs 15000/day',
+    "Single Bed      Rs  4000/day ",
+    'Double Bed    Rs  8000/day ',
+    'King Size bed   Rs 12000/day',
+
   ];
   String? selectedValue;
 
@@ -36,8 +35,8 @@ class _rdt_BookState extends State<rdt_Book> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.brown,
-        title: const Text("Book Your Road Trip"),
+        backgroundColor: Colors.lightGreenAccent,
+        title: const Text("Book Your Camping"),
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -149,18 +148,23 @@ class _rdt_BookState extends State<rdt_Book> {
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(
                     ),
-                    labelText: 'Address',
+                    labelText: 'Credit Card Number',
                   ),
                   controller: address,
                   keyboardType: TextInputType.streetAddress,
+
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Enter your address';
+                      return 'Enter your phone number';
+                    }
+                    else if(!RegExp(r'^[0-9]{4}[-\s\./0-9]+$').hasMatch(value)){
+                      return 'Enter valid Credit  number';
                     }
                     else {
                       return null;
                     }
                   },
+
 
                 ),
                 sizedb10,
@@ -169,14 +173,14 @@ class _rdt_BookState extends State<rdt_Book> {
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(
                     ),
-                    labelText: 'Starting Location',
+                    labelText: 'Age',
 
                   ),
                   controller: strtaddress,
-                  keyboardType: TextInputType.streetAddress,
+                  keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Enter your Starting Address';
+                      return 'Enter your Age';
                     }
                     else {
                       return null;
@@ -185,24 +189,24 @@ class _rdt_BookState extends State<rdt_Book> {
                 ),
                 sizedb10,
 
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(
-                    ),
-                    labelText: 'Destination',
-                  ),
-                  controller: destination,
-                  keyboardType: TextInputType.streetAddress,
-                  validator: (value){
-                    if(value!.isEmpty){
-                      return 'Enter your Destination';
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                ),
-                sizedb20,
+                // TextFormField(
+                //   decoration: InputDecoration(
+                //     border: UnderlineInputBorder(
+                //     ),
+                //     labelText: 'Destination',
+                //   ),
+                //   controller: destination,
+                //   keyboardType: TextInputType.streetAddress,
+                //   validator: (value){
+                //     if(value!.isEmpty){
+                //       return 'Enter your Starting Address';
+                //     }
+                //     else {
+                //       return null;
+                //     }
+                //   },
+                // ),
+                // sizedb20,
 
                 DropdownButtonHideUnderline(
                   child: DropdownButton2(
@@ -212,7 +216,7 @@ class _rdt_BookState extends State<rdt_Book> {
 
                         Expanded(
                           child: Text(
-                            'Select Your Vehicle ',
+                            'Select Your Area ',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -299,7 +303,7 @@ class _rdt_BookState extends State<rdt_Book> {
                       strtaddress.clear();
                       destination.clear();
                     },
-                    child: Text('Book Road Trip',)
+                    child: Text('Book Camp',)
                 ),
                 sizedb20,
 

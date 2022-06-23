@@ -1,10 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:travelling_app/Booking/camp_booking.dart';
+import 'package:travelling_app/Booking/cruise_booking.dart';
 import 'package:travelling_app/constant.dart';
-import 'package:travelling_app/Data/fasil_Mosque.dart';
-import 'package:travelling_app/Data/centours.dart';
-import 'package:travelling_app/Data/monal.dart';
-import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
 import 'package:travelling_app/screens/Karachi.dart';
 import 'package:travelling_app/screens/Multan.dart';
@@ -364,7 +362,7 @@ class _NewState extends State<New> {
                                 ),
                                 onTap: (){
                                   Navigator.push(context,
-                                      MaterialPageRoute(builder: (context)=>const Monument())
+                                      MaterialPageRoute(builder: (context)=> Camp_Book())
                                   );
                                 },
                               ),
@@ -388,7 +386,7 @@ class _NewState extends State<New> {
                                 ),
                                 onTap: (){
                                   Navigator.push(context,
-                                      MaterialPageRoute(builder: (context)=>Monal())
+                                      MaterialPageRoute(builder: (context)=>cruise_Book())
                                   );
                                 },
                               ),

@@ -2,14 +2,14 @@ import 'package:travelling_app/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-class rdt_Book extends StatefulWidget {
-  const rdt_Book({Key? key}) : super(key: key);
+class cruise_Book extends StatefulWidget {
+  const cruise_Book({Key? key}) : super(key: key);
 
   @override
-  State<rdt_Book> createState() => _rdt_BookState();
+  State<cruise_Book> createState() => _cruise_BookState();
 }
 
-class _rdt_BookState extends State<rdt_Book> {
+class _cruise_BookState extends State<cruise_Book> {
   final formkey = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
   TextEditingController cnic = TextEditingController();
@@ -20,11 +20,11 @@ class _rdt_BookState extends State<rdt_Book> {
   TextEditingController destination = TextEditingController();
 
   final List<String> items = [
-    "Toyota Vitz      Rs  4000/day ",
-    'Toyota Yaris     Rs  6000/day ',
-    'Toyota Hi-Roof   Rs 10000/day',
-    'Toyota Pickup    Rs  8000/day',
-    'Daewoo Bus       Rs 15000/day',
+    "Thu, 25 June 2022     Rs  4000/day ",
+    'Wed, 29 June 2022      Rs  6000/day ',
+    'Tue, 5 July 2022    Rs 10000/day',
+    'Sat, 16 july 2022   Rs  8000/day',
+    'Fri, 23 June 2022       Rs 15000/day',
   ];
   String? selectedValue;
 
@@ -36,8 +36,8 @@ class _rdt_BookState extends State<rdt_Book> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.brown,
-        title: const Text("Book Your Road Trip"),
+        backgroundColor: Colors.lightBlueAccent,
+        title: const Text("Book Your Cruise"),
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -165,44 +165,44 @@ class _rdt_BookState extends State<rdt_Book> {
                 ),
                 sizedb10,
 
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(
-                    ),
-                    labelText: 'Starting Location',
+                // TextFormField(
+                //   decoration: InputDecoration(
+                //     border: UnderlineInputBorder(
+                //     ),
+                //     labelText: 'Starting Location',
+                //
+                //   ),
+                //   controller: strtaddress,
+                //   keyboardType: TextInputType.streetAddress,
+                //   validator: (value){
+                //     if(value!.isEmpty){
+                //       return 'Enter your Starting Addres s';
+                //     }
+                //     else {
+                //       return null;
+                //     }
+                //   },
+                // ),
+                // sizedb10,
 
-                  ),
-                  controller: strtaddress,
-                  keyboardType: TextInputType.streetAddress,
-                  validator: (value){
-                    if(value!.isEmpty){
-                      return 'Enter your Starting Address';
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                ),
-                sizedb10,
-
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(
-                    ),
-                    labelText: 'Destination',
-                  ),
-                  controller: destination,
-                  keyboardType: TextInputType.streetAddress,
-                  validator: (value){
-                    if(value!.isEmpty){
-                      return 'Enter your Destination';
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                ),
-                sizedb20,
+                // TextFormField(
+                //   decoration: InputDecoration(
+                //     border: UnderlineInputBorder(
+                //     ),
+                //     labelText: 'Destination',
+                //   ),
+                //   controller: destination,
+                //   keyboardType: TextInputType.streetAddress,
+                //   validator: (value){
+                //     if(value!.isEmpty){
+                //       return 'Enter your Starting Address';
+                //     }
+                //     else {
+                //       return null;
+                //     }
+                //   },
+                // ),
+                // sizedb20,
 
                 DropdownButtonHideUnderline(
                   child: DropdownButton2(
@@ -212,7 +212,7 @@ class _rdt_BookState extends State<rdt_Book> {
 
                         Expanded(
                           child: Text(
-                            'Select Your Vehicle ',
+                            'Select Your Time ',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -299,7 +299,7 @@ class _rdt_BookState extends State<rdt_Book> {
                       strtaddress.clear();
                       destination.clear();
                     },
-                    child: Text('Book Road Trip',)
+                    child: Text('Book Cruise',)
                 ),
                 sizedb20,
 

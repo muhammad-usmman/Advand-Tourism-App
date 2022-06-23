@@ -1,34 +1,34 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:travelling_app/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 
-class rdt_Book extends StatefulWidget {
-  const rdt_Book({Key? key}) : super(key: key);
+class Camp_Book extends StatefulWidget {
 
   @override
-  State<rdt_Book> createState() => _rdt_BookState();
+  State<Camp_Book> createState() => _Camp_BookState();
 }
 
-class _rdt_BookState extends State<rdt_Book> {
+class _Camp_BookState extends State<Camp_Book> {
+
   final formkey = GlobalKey<FormState>();
-  TextEditingController name = TextEditingController();
-  TextEditingController cnic = TextEditingController();
-  TextEditingController mail = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController address = TextEditingController();
-  TextEditingController strtaddress = TextEditingController();
-  TextEditingController destination = TextEditingController();
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController cniccontrller = TextEditingController();
+  TextEditingController mailcontroller = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
+  TextEditingController addresscontroller = TextEditingController();
+  TextEditingController agecontroller = TextEditingController();
+  // TextEditingController destination = TextEditingController();
 
   final List<String> items = [
-    "Toyota Vitz      Rs  4000/day ",
-    'Toyota Yaris     Rs  6000/day ',
-    'Toyota Hi-Roof   Rs 10000/day',
-    'Toyota Pickup    Rs  8000/day',
-    'Daewoo Bus       Rs 15000/day',
+    "Fairy Medows      Rs  4000/day ",
+    'K2 Base Camp    Rs  12000/day ',
+    'Skardu   Rs 10000/day',
+    'Shogran    Rs  3000/day',
+    'Pir Chinasi       Rs 7000/day',
   ];
   String? selectedValue;
-
-
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -36,8 +36,8 @@ class _rdt_BookState extends State<rdt_Book> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.brown,
-        title: const Text("Book Your Road Trip"),
+        backgroundColor: Colors.lightGreenAccent,
+        title: const Text("Book Your Camping"),
         elevation: 0,
         leading: IconButton(
           onPressed: () {
@@ -57,11 +57,11 @@ class _rdt_BookState extends State<rdt_Book> {
 
                 TextFormField(
                   decoration: InputDecoration(
-                    border: UnderlineInputBorder(
-                    ),
+                    // icon: Icon(Icons.person),
+                    border: UnderlineInputBorder(),
                     labelText: 'Name',
                   ),
-                  controller: name,
+                  controller: namecontroller,
                   keyboardType: TextInputType.name,
                   validator: (value){
                     if(value!.isEmpty){
@@ -85,7 +85,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     labelText: 'CNIC',
                     helperText: 'XXXXX-XXXXXXX-X',
                   ),
-                  controller: cnic,
+                  controller: cniccontrller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -108,7 +108,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     labelText: 'E-Mail Id',
                     helperText: 'example@domain.com',
                   ),
-                  controller: mail,
+                  controller: mailcontroller,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -129,7 +129,7 @@ class _rdt_BookState extends State<rdt_Book> {
                       labelText: 'Phone No.',
                       helperText: 'XXXX-XXXXXXX'
                   ),
-                  controller: phone,
+                  controller: phonecontroller,
                   keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -151,7 +151,7 @@ class _rdt_BookState extends State<rdt_Book> {
                     ),
                     labelText: 'Address',
                   ),
-                  controller: address,
+                  controller: addresscontroller,
                   keyboardType: TextInputType.streetAddress,
                   validator: (value){
                     if(value!.isEmpty){
@@ -169,14 +169,14 @@ class _rdt_BookState extends State<rdt_Book> {
                   decoration: InputDecoration(
                     border: UnderlineInputBorder(
                     ),
-                    labelText: 'Starting Location',
+                    labelText: 'Age',
 
                   ),
-                  controller: strtaddress,
-                  keyboardType: TextInputType.streetAddress,
+                  controller: agecontroller,
+                  keyboardType: TextInputType.number,
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Enter your Starting Address';
+                      return 'Enter your Age';
                     }
                     else {
                       return null;
@@ -185,24 +185,24 @@ class _rdt_BookState extends State<rdt_Book> {
                 ),
                 sizedb10,
 
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(
-                    ),
-                    labelText: 'Destination',
-                  ),
-                  controller: destination,
-                  keyboardType: TextInputType.streetAddress,
-                  validator: (value){
-                    if(value!.isEmpty){
-                      return 'Enter your Destination';
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                ),
-                sizedb20,
+                // TextFormField(
+                //   decoration: InputDecoration(
+                //     border: UnderlineInputBorder(
+                //     ),
+                //     labelText: 'Destination',
+                //   ),
+                //   controller: destination,
+                //   keyboardType: TextInputType.streetAddress,
+                //   validator: (value){
+                //     if(value!.isEmpty){
+                //       return 'Enter your Starting Address';
+                //     }
+                //     else {
+                //       return null;
+                //     }
+                //   },
+                // ),
+                // sizedb20,
 
                 DropdownButtonHideUnderline(
                   child: DropdownButton2(
@@ -212,7 +212,7 @@ class _rdt_BookState extends State<rdt_Book> {
 
                         Expanded(
                           child: Text(
-                            'Select Your Vehicle ',
+                            'Select Your Area ',
                             style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
@@ -281,26 +281,38 @@ class _rdt_BookState extends State<rdt_Book> {
                 sizedb20,
                 ElevatedButton(
                     onPressed: () {
+
                       if(formkey.currentState!.validate()){
-                        final snackBar = SnackBar(
-                          content: Text('Class booked successfully.'),
-                          behavior: SnackBarBehavior.floating,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                        );
-                        _scaffoldKey.currentState!.showSnackBar(snackBar);
+                        // final snackBar = SnackBar(
+                        //   content: Text('Class booked successfully.'),
+                        //   behavior: SnackBarBehavior.floating,
+                        //   shape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(10)
+                        //   ),
+                        // );
+                        // _scaffoldKey.currentState!.showSnackBar(snackBar);
+                        FirebaseFirestore.instance.collection("Camp_Booking").add({
+                          'name':'${namecontroller.text}',
+                          'cnic':'${cniccontrller.text}',
+                          'e-mail id':'${mailcontroller.text}',
+                          'contact':'${phonecontroller.text}',
+                          'address':'${addresscontroller.text}',
+                          'age':'${agecontroller.text}'
+                            }
+                            );
+                        Navigator.pop(context);
                       }
-                      name.clear();
-                      cnic.clear();
-                      mail.clear();
-                      phone.clear();
-                      address.clear();
-                      strtaddress.clear();
-                      destination.clear();
+                      // _namecontroller.clear();
+                      // cnic.clear();
+                      // mail.clear();
+                      // phone.clear();
+                      // address.clear();
+                      // strtaddress.clear();
+                      // destination.clear();
                     },
-                    child: Text('Book Road Trip',)
+                    child: Text('Book Camp',)
                 ),
+
                 sizedb20,
 
 

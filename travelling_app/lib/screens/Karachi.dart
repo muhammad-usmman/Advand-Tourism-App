@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:travelling_app/constant.dart';
+// import 'package:travelling_app/Data/badsahi_mosque.dart';
+import 'package:travelling_app/Data/centours.dart';
+import 'package:travelling_app/Data/fasil_Mosque.dart';
+// import 'package:travelling_app/Data/lahore_fort.dart';
+// import 'package:travelling_app/Data/lahore_museum.dart';
+// import 'package:travelling_app/Data/minare_Pakistan.dart';
+import 'package:travelling_app/Data/monal.dart';
+import 'package:travelling_app/Data/Monument.dart';
 import 'package:travelling_app/screens/Home_Page.dart';
+
 import '../Dreawer/Contact.dart';
 import '../Dreawer/about.dart';
-
+// import 'package:travelling_app/Data/ShahJhan.dart';
+// import 'package:travelling_app/Data/walled_Citty.dart';
 
 class karachi extends StatefulWidget {
   const karachi({Key? key}) : super(key: key);
@@ -32,7 +42,7 @@ class _karachiState extends State<karachi> {
                 width: 50,
               ),
               Container(
-                  padding: const EdgeInsets.all(8.0), child:const  Text('Peshawar'))
+                  padding: const EdgeInsets.all(8.0), child:const  Text('Islamabad'))
             ],
           ),
         ),
@@ -55,94 +65,93 @@ class _karachiState extends State<karachi> {
                       InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child:
-                          const Text('',style: kIText,),//TODO: ADD NAME AND IMAGES
+                          child: const Text('Fasil Mosque',style: kIText,),
                           width: 500.0,
                           decoration:const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("")),//TODO: ADD NAME AND IMAGES
+                                image:AssetImage("images/Islamabad/fasilmosque.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
-                        // onTap: (){
-                        //   Navigator.push(context,
-                        //       MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
-                        //   );
-                        // },
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>const Faasil_Mosque())
+                          );
+                        },
                       ),
                       const SizedBox(
                         width: 10.0,
                       ),
 
-                      InkWell(//TODO: ADD NAME AND IMAGES AND NAV
+                      InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('',style: kIText,),
+                          child: const Text('Pakistan Monument Museum',style: kIText,),
                           width: 500.0,
                           decoration:const  BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("")),
+                                image: AssetImage("images/Islamabad/monument.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
-                        // onTap: (){
-                        //
-                        //   Navigator.push(context,
-                        //       MaterialPageRoute(builder: (context)=>const Monument())
-                        //   );
-                        // },
+                        onTap: (){
+
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>const Monument())
+                          );
+                        },
                       ),
                       const SizedBox(
                         width: 10.0,
                       ),
 
-                      InkWell(//TODO: ADD NAME AND IMAGES AND NAV
+                      InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('',style: kIText,),
+                          child: const Text('Monal',style: kIText,),
                           width: 500.0,
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("")),
+                                image: AssetImage("images/Islamabad/monal.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
-                        // onTap: (){
-                        //
-                        //   Navigator.push(context,
-                        //       MaterialPageRoute(builder: (context)=>const Monal())
-                        //   );
-                        // },
+                        onTap: (){
+
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>const Monal())
+                          );
+                        },
                       ),
                       const SizedBox(
                         width: 10.0,
                       ),
 
-                      InkWell(//TODO: ADD NAME AND IMAGES AND NAV
+                      InkWell(
                         child: Container(
                           alignment: Alignment.bottomLeft,
-                          child: const Text('',style: kIText,),
+                          child: const Text('Centours',style: kIText,),
                           width: 500.0,
                           decoration: const  BoxDecoration(
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: NetworkImage("")),
+                                image:AssetImage("images/Islamabad/centours.jpg")),
                             borderRadius: BorderRadius.all(Radius.circular(8.0)),
                             color: Colors.redAccent,
                           ),
                         ),
-                        // onTap: (){
-                        //
-                        //   Navigator.push(context,
-                        //       MaterialPageRoute(builder: (context)=>const Centours())
-                        //   );
-                        // },
+                        onTap: (){
+
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context)=>const Centours())
+                          );
+                        },
                       ),
                       SizedBox(
                         width: 10.0,
@@ -152,12 +161,12 @@ class _karachiState extends State<karachi> {
                 ),
 
 
-                Padding(//TODO: CHANGE DESCRIPTION
+                Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Expanded(
                     child: Column(
                       children:const  [
-                        Text('    ',
+                        Text('     Islamabad  is the capital city of Pakistan, and is administered by the Pakistani federal government as part of the Islamabad Capital Territory.',
                           style: kBodyTextStyle,
                         ),
                       ],
@@ -184,7 +193,7 @@ class _karachiState extends State<karachi> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: NetworkImage("images/icons/travel&tourism.jpg")),
+                    image:AssetImage("images/icons/travel&tourism.jpg")),
 
               ),
               child: Text('Travel and Tourism'),
